@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #container {
+            width: 340px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            padding: 10px 5px;
+        }
+
+        .item .col {
+            float: left;
+            width: 70px;
+            text-align: right;
+        }
+
+        .item #name {
+            width:110px;
+            text-align: left;
+            color: #555555;
+            font-size: 13px;
+        }
+
+        .item {
+            margin-top: 5px;
+        }
+
+        .item .name {
+            font-weight: bold;
+
+        }
+        .item .date {
+            color: #777777;
+        }
+
+        .item .num1, .item .num2 {
+            color: #FF0000;
+        }
+
+        #blue1, #blue2 {
+            color: #0000FF;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <!-- (div>span.name+span.num1+span.num2+sapn.date)*5 -->
+        <div class="item">
+            <div class="col" id="name"><span class="name">HB테크 놀러지</span></div>
+            <div class="col"><span class="num1">+17.42%</span></div>
+            <div class="col"><span class="num2">+21.26%</span></div>
+            <div class="col"><sapn class="date">16.10.20</sapn></div>
+            <div style="clear: both;"></div>
+            
+        </div>
+        <div class="item">
+            <div class="col" id="name"><span class="name">우리산업</span></div>
+            <div class="col"> <span class="num1">+17.38%</span></div>
+            <div class="col"> <span class="num2" id="blue1">-18.10%</span></div>
+            <div class="col"><sapn class="date">16.10.12</sapn></div>
+            <div style="clear: both;"></div>
+            
+           
+           
+            
+        </div>
+        <div class="item">
+            <div class="col" id="name"><span class="name">AP시스템</span></div>
+            <div class="col"><span class="num1">+14.81%</span></div>
+            <div class="col"><span class="num2">+13.20%</span></div>
+            <div class="col"><sapn class="date">16.12.07</sapn></div>
+            <div style="clear: both;"></div>
+            
+            
+            
+            
+
+        </div>
+        <div class="item">
+            <div class="col" id="name"><span class="name">유니트론텍</span></div>
+            <div class="col"><span class="num1">+13.47%</span></div>
+            <div class="col"><span class="num2" id="blue2">-5.90%</span></div>
+            <div class="col"><sapn class="date">16.09.26</sapn></div>
+            <div style="clear: both;"></div>
+            
+            
+            
+            
+        </div>
+        <div class="item">
+            <div class="col" id="name"><span class="name">심텍</span></div>
+            <div class="col"><span class="num1">+12.73%</span></div>
+            <div class="col"><span class="num2">+40.75%</span></div>
+            <div class="col"><sapn class="date">16.10.24</sapn></div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+
+
+</body>
+</html>

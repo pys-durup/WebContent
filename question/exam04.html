@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #section {
+            border: 1px solid rgb(212, 212, 212);
+            width: 550px;
+            height: 220px;
+        }
+
+        #section .title {
+            /* border: 1px solid red; */
+            color: black;
+            font-weight: bold;
+            font-size: 13px;
+            font-family: '돋움';
+            margin: 20px;
+            margin-bottom: 10px;
+            width: 550px;
+            height: 20px;
+        }
+
+        #section .content {
+            /* border: 1px solid red; */
+            width: 550px;
+            height: 140px;
+            /* margin: 20px; */
+            
+            
+        }
+
+        #section img {
+            width: 25px;
+            height: 25px;
+            vertical-align:middle;
+            padding-bottom: 2px;
+        }
+
+        #section .weather {
+            /* border: 1px solid blue; */
+            width: 90px;
+            height: 140px;
+            float: left;
+            border-left: 1px solid #e6e6e6;
+            padding: 9px;
+        }
+
+        .weather .day {
+            color: black;
+            font-size: 13px;
+            font-family: '돋움';
+            margin: 5px;
+            margin-left: 22px;
+        }
+
+        .weather .date {
+            color: #8F8F8F;
+            font-size: 11px;
+            font-family: '돋움';
+            margin: 5px;
+        }
+
+        #section .up {
+            color: #41B5EE;
+        }
+
+        .weather .am, .weather .pm{
+            /* border: 1px solid Green; */
+            color: #8F8F8F;;
+            font-size: 12px;
+            font-family: '돋움';
+            margin: 10px 0;
+            margin-left: 10px;
+        }
+
+        .weather .percent {
+            margin-left: 15px;
+        }
+
+        .weather .temperature {
+            font-size: 12px;
+            font-family: '돋움';
+            font-weight: bold;
+            margin-left: 22px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="section">
+        <div class="title">주간날씨</div>
+        <div class="content">
+            <div class="weather">
+                <div class="day">목<span class="date">오늘</span></div>
+                <div class="am up"><img src="/images/exam04/icon_wt_22.svg" alt=""><span class="percent">70%</span></div>
+                <div class="pm up"><img src="/images/exam04/icon_wt_22.svg" alt=""><span class="percent">60%</span></div>
+                <div class="temperature">21˚/25˚</div>
+            </div>
+            <div class="weather">
+                <div class="day">금<span class="date">내일</span></div>
+                <div class="am up"><img src="/images/exam04/icon_wt_22.svg" alt=""><span class="percent">60%</span></div>
+                <div class="pm "><img src="/images/exam04/icon_wt_22.svg" alt=""><span class="percent">30%</span></div>
+                <div class="temperature">21˚/28˚</div>
+            </div>
+            <div class="weather">
+                <div class="day">토<span class="date">모레</span></div>
+                <div class="am "><img src="/images/exam04/icon_wt_22.svg" alt=""><span class="percent">30%</span></div>
+                <div class="pm "><img src="/images/exam04/icon_wt_22.svg" alt=""><span class="percent">30%</span></div>
+                <div class="temperature">21˚/29˚</div>
+            </div>
+            <div class="weather">
+                <div class="day">일<span class="date">6.28.</span></div>
+                <div class="am p"><img src="/images/exam04/icon_wt_22.svg" alt=""><span class="percent">30%</span></div>
+                <div class="pm up"><img src="/images/exam04/icon_wt_22.svg" alt=""><span class="percent">60%</span></div>
+                <div class="temperature">21˚/31˚</div>
+            </div>
+            <div class="weather">
+                <div class="day">월<span class="date">6.29</span></div>
+                <div class="am "><img src="/images/exam04/icon_wt_22.svg" alt=""><span class="percent">30%</span></div>
+                <div class="pm up"><img src="/images/exam04/icon_wt_22.svg" alt=""><span class="percent">60%</span></div>
+                <div class="temperature">21˚/29˚</div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        
+
+
+
+
+    </div>
+
+    
+</body>
+</html>

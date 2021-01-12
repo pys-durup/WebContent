@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #main {
+            width: 1400px;
+            margin: 0 auto;
+        }
+
+        #container {
+            border: 1px solid black;
+            height: 750px;
+        }
+
+        .area {
+            border-bottom: 1px solid black;
+            width: 1400px;
+            height: 150px;
+        }
+
+        .area > .ball {
+            width: 75px;
+            height: 95px;
+            border: 1px solid black;
+            border-radius: 50%;
+            position: relative;
+            top: 50px;
+            left: 0px;
+            font-size: 70px;
+            font-weight: bold;
+            padding-top: 5px;
+            padding-left: 25px;
+            transition: all 5s;
+
+        }
+
+        #container:hover .ball{
+            position: relative;
+            top:50px;
+            left:1296px;
+            transform: rotate(4320deg);
+        }
+        
+
+        #ball1 { background-color: tomato; transition-timing-function: linear;}
+        #ball2 { background-color: yellow; transition-timing-function: ease;}
+        #ball3 { background-color: orange; transition-timing-function: ease-in-out;}
+        #ball4 { background-color: greenyellow; transition-timing-function: ease-in;}
+        #ball5 { background-color: skyblue; transition-timing-function: ease-out;}
+
+
+
+    </style>
+</head>
+<body>
+
+    <div id="main">
+    
+        <h1>:hover + position(absolute) + transform(rotate) + transition</h1>
+    
+        <div>공을 회전시키면서 우측으로 이동하시오.</div>
+    
+        <div id="container">
+            <div class="area">
+                <div id="ball1" class="ball">A</div>
+            </div>
+            <div class="area">
+                <div id="ball2" class="ball">B</div>
+            </div>
+            <div class="area">
+                <div id="ball3" class="ball">C</div>
+            </div>
+            <div class="area">
+                <div id="ball4" class="ball">D</div>
+            </div>
+            <div class="area">
+                <div id="ball5" class="ball">E</div>
+            </div>
+        </div>
+        
+
+    </div>
+
+</body>
+</html>

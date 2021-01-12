@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #main {
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        #box {
+            width: 700px;
+            height: 700px;
+            border: 1px solid black;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+
+        .big-ball {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: tomato;
+            position: absolute;
+            left: 275px;
+            top: 275px;
+        }
+
+        .small-ball {
+            width: 30px;
+            height: 30px;
+            background-color: rgb(230, 230, 3);
+            border-radius: 50%;
+            position: absolute;
+            left: 335px;
+            top: 335px;
+        }
+
+        #box:hover #ball1{
+            transition-duration: 3s;
+            transition-timing-function: ease-in-out;
+            transition-delay: 1.5s;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #box:hover #ball2{
+            transition-duration: 3s;
+            transition-delay: 1s;
+            position: absolute;
+            left: 335px;
+            top: 0;
+        }
+
+        #box:hover #ball3{
+            transition-duration: 3s;
+            transition-delay: 2.5s;
+            position: absolute;
+            left: 670px;
+            top: 0;
+        }
+
+        #box:hover #ball4{
+            transition-duration: 3s;
+            position: absolute;
+            transition-delay: 3.4s;
+            left: 0;
+            top: 335px;
+        }
+
+        #box:hover #ball5{
+            transition-duration: 3s;
+            position: absolute;
+            transition-delay: 3.1s;
+            left: 670px;
+            top: 335px;
+        }
+
+        #box:hover #ball6{
+            transition-duration: 3s;
+            position: absolute;
+            transition-delay: 2.8s;
+            left: 0;
+            top: 670px;
+        }
+
+        #box:hover #ball7{
+            transition-duration: 3s;
+            position: absolute;
+            transition-delay: 2s;
+            left: 335px;
+            top: 670px;
+        }
+
+        #box:hover #ball8{
+            transition-duration: 3s;
+            position: absolute;
+            transition-delay: .5s;
+            left: 670px;
+            top: 670px;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div id="main">
+        <h1>transition + transition-duration + position(absolute)</h1>
+
+        <div>중심의 공들을 각 방향으로 분산시키시오.</div>
+
+        <div id="box">
+            <div class="big-ball"></div>
+            <div class="small-ball" id="ball1"></div>
+            <div class="small-ball" id="ball2"></div>
+            <div class="small-ball" id="ball3"></div>
+            <div class="small-ball" id="ball4"></div>
+            <div class="small-ball" id="ball5"></div>
+            <div class="small-ball" id="ball6"></div>
+            <div class="small-ball" id="ball7"></div>
+            <div class="small-ball" id="ball8"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>

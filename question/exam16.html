@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        #main {
+            width: 670px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-top: 20px;
+            width: 650px;
+            height: 800px;
+            border: 10px solid black;
+        }
+
+        .ball {
+            width: 50px;
+            height: 50px;
+            border: 10px solid black;
+            border-radius: 50%;
+            float: left;
+            position: relative;
+            left: 0px;
+            top: 0px;
+            margin-left: 20px;
+            animation-name: key1;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-in;
+            
+        }
+
+        @keyframes key1 {
+
+            0% {
+                position: relative;
+                left: 0px;
+                top: 0px;
+            }
+
+            100% {
+                position: relative;
+                left: 0px;
+                top: 730px;
+            }
+        }
+
+        #ball1 {
+            background-color: red;
+            animation-duration: 1s;
+        }
+
+        #ball2 {
+            background-color: orange;
+            animation-duration: .5s;   
+        }
+
+        #ball3 {
+            background-color: yellow;
+            animation-duration: 1.4s;
+        }   
+
+        #ball4 {
+            background-color: green;
+            animation-duration: 1.2s;
+        }
+
+        #ball5 {
+            background-color: blue;
+            animation-duration: 0.8s;
+        }
+
+        #ball6 {
+            background-color: purple;
+            animation-duration: 1.6s;
+        }
+
+        #ball7 {
+            background-color: rosybrown;
+            animation-duration: 0.6s;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+
+        <h1>animation + keyframe</h1>
+
+        <div>공 튀기시오.</div>
+
+        <section>
+            <div class="ball" id="ball1"></div>
+            <div class="ball" id="ball2"></div>
+            <div class="ball" id="ball3"></div>
+            <div class="ball" id="ball4"></div>
+            <div class="ball" id="ball5"></div>
+            <div class="ball" id="ball6"></div>
+            <div class="ball" id="ball7"></div>
+        </section>
+
+    </div>
+
+</body>
+</html>

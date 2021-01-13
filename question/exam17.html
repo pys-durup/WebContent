@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            background-color: #222222;
+        }
+
+        #section {
+            color: white;
+            font-variant: small-caps;
+            margin-top: 400px;
+        }
+
+        #section span {
+            font-size: 7em;
+			font-family: Arial;
+            display: inline-block;
+            animation-name: change;
+            animation-duration: .5s;
+            transform: scale(50,50);
+            opacity: 0;
+            animation-fill-mode: forwards;
+            animation-delay: 0.5s;
+        }
+
+        #section span:nth-child(1) {
+            animation-delay: .05s;
+        }
+
+
+        #section span:nth-child(2) {
+            animation-delay: .15s;
+        }
+        
+        #section span:nth-child(3) {
+            animation-delay: .3s;
+        }
+        
+        #section span:nth-child(4) {
+            animation-delay: .45s;
+        }
+        
+        #section span:nth-child(5) {
+            animation-delay: .6s;
+        }
+        
+        #section span:nth-child(6) {
+            animation-delay: .75s;
+        }
+        
+        #section span:nth-child(7) {
+            animation-delay: .9s;
+        }
+        
+        #section span:nth-child(8) {
+            animation-delay: 1.05s;
+        }
+        
+        #section span:nth-child(9) {
+            animation-delay: 1.2s;
+        }
+        
+        #section span:nth-child(10) {
+            animation-delay: 1.35s;
+        }
+        
+        #section span:nth-child(11) {
+            animation-delay: 1.5s;
+        }
+        
+        #section #part12 {
+            animation-delay: 1.65s;
+            color: gold;
+        }
+        
+
+        @keyframes change {
+            from {
+                transform: scale(30, 30);
+                opacity: 0;
+            }
+
+            to {   
+                transform: scale(1, 1);
+                opacity: 1;
+            }
+        }
+
+        
+
+
+
+
+        
+
+    </style>
+</head>
+<body>
+    <div id="main">
+
+        <div id="section">
+            <span id="part1">H</span>
+            <span id="part2">e</span>
+            <span id="part3">l</span>
+            <span id="part4">l</span>
+            <span id="part5">o</span>
+            <span id="part6">!</span>
+            <span id="part7">H</span>
+            <span id="part8">T</span>
+            <span id="part9">M</span>
+            <span id="part10">L</span>
+            <span><img src="../images/language/html.png" alt="" id="part11" width="100px" height="100px" ></span>
+        </div>
+
+    </div>
+
+</body>
+</html>

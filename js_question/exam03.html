@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        td input {
+            display: block;
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        td {
+            padding: 20px;
+            border: 1px solid black
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td img {
+            padding: 10px 80px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <h1>롤오버 이미지 + 새창 띄우기</h1>
+    
+    <table>
+        <th>
+            <td>
+                <input type="button" value="강아지1" name="btn1">
+                <input type="button" value="강아지2" name="btn2">
+                <input type="button" value="강아지3" name="btn3">
+                <input type="button" value="강아지4" name="btn4">
+                <input type="button" value="강아지5" name="btn5">
+            </td>
+            <td>
+                <img src="../images/dog01.jpg" name="view">
+            </td>
+        </th>
+    </table>
+
+
+    <script>
+        
+        var btn1 = window.document.all["btn1"];
+        var btn2 = window.document.all["btn2"];
+        var btn3 = window.document.all["btn3"];
+        var btn4 = window.document.all["btn4"];
+        var btn5 = window.document.all["btn5"];
+
+        var view = window.document.all["view"];
+
+        btn1.onmouseover = function() {
+            view.src = "../images/dog01.jpg";
+        }
+
+        btn1.onclick = function() {
+            window.open("../images/dog01_big.jpg", "child", "width=1600, height=1200" )
+        }
+
+        btn2.onmouseover = function() {
+            view.src = "../images/dog02.jpg";
+        }
+
+        btn2.onclick = function() {
+            window.open("../images/dog02_big.jpg", "child", "width=1600, height=1200" )
+        }
+
+        btn3.onmouseover = function() {
+            view.src = "../images/dog03.jpg";
+        }
+
+        btn3.onclick = function() {
+            window.open("../images/dog03_big.jpg", "child", "width=1600, height=1200" )
+        }
+
+        btn4.onmouseover = function() {
+            view.src = "../images/dog04.jpg";
+        }
+
+        btn4.onclick = function() {
+            window.open("../images/dog04_big.jpg", "child", "width=1600, height=1200" )
+        }
+
+        btn5.onmouseover = function() {
+            view.src = "../images/dog05.jpg";
+        }
+
+        btn5.onclick = function() {
+            window.open("../images/dog05_big.jpg", "child", "width=1600, height=1200" )
+        }
+
+
+    </script>
+
+</body>
+</html>

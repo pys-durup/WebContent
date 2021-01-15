@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #showtext {
+            border: none;
+            width: 500px;
+            font-size: 1.5em;
+            font-weight: bold;
+            outline: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>롤오버 이미지 + 텍스트 박스</h1>
+
+    <div>
+        <img src="../images/img01.jpg" name="img1">
+        <img src="../images/img02.jpg" name="img2">
+        <img src="../images/img03.jpg" name="img3">
+    </div>
+    <div><input type="text" name="showtext" id="showtext"></div>
+
+    <script>
+        
+        var img1 = window.document.images["img1"];
+        var img2 = window.document.images["img2"];
+        var img3 = window.document.images["img3"];
+        var showtext = window.document.all["showtext"];
+
+        img1.onmouseover = function() {
+            img1.src = "../images/img04.jpg";
+            showtext.value = "'스키'타는 사람이 '당근'으로 변했습니다";
+        };
+
+        img1.onmouseout = function() {
+            img1.src = "../images/img01.jpg";
+            showtext.value = "";
+        }
+
+        img2.onmouseover = function() {
+            img2.src = "../images/img05.jpg";
+            showtext.value = "해바라기'가 '피망'으로 변했습니다";
+        };
+
+        img2.onmouseout = function() {
+            img2.src = "../images/img02.jpg";
+            showtext.value = "";
+        }
+
+        img3.onmouseover = function() {
+            img3.src = "../images/img06.jpg";
+            showtext.value = "'나무'가 '개'가 됐습니다";
+        };
+
+        img3.onmouseout = function() {
+            img3.src = "../images/img03.jpg";
+            showtext.value = "";
+        }
+
+// '스키'타는 사람이 '당근'으로 변했습니다
+// '해바라기'가 '피망'으로 변했습니다
+// '나무'가 '개'가 됐습니다
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #message {
+            outline: none;
+            border: none;
+            color: tomato;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>아이디 유효성 검사</h1>
+    <div>아이디 : 5~10자 이내</div>
+
+    <hr>
+    
+    <div>
+        <label for="">아이디 : </label>
+        <input type="text" name="txtID" size="15">
+        <input type="text" name="message" id="message" readonly>
+    </div>
+
+
+    <script>
+
+        var txtID = window.document.all["txtID"];
+        var message = window.document.all["message"];
+
+        txtID.onkeyup = function() {
+            if(txtID.value == "") {
+                message.value = "";
+            } else if(txtID.value.length < 5) {
+                console.log("test");
+                message.value = "아이디가 너무 짧습니다.";
+            } else if (txtID.value.length >= 5 && txtID.value.length <= 10) {
+                message.value = "아이디가 적합합니다.";
+            } else if (txtID.value.length > 10) {
+                message.value = "아이디가 너무 깁니다.";
+            }
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

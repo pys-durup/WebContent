@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>고양이 키우기 + 마우스 이벤트</h1>
+    <div>마우스를 올리면 고양이 사이즈를 증가시키고, 클릭하면 리셋하시오</div>
+    <hr>
+
+    <div>
+        <img src="../images/catty01.png" name="cat1">
+        <img src="../images/catty02.png" name="cat2">
+        <img src="../images/catty03.png" name="cat3">
+        <img src="../images/catty04.png" name="cat4">
+        <img src="../images/catty05.png" name="cat5">
+    </div>
+
+
+    <script>
+
+        var cat1 = window.document.images["cat1"];
+        var cat2 = window.document.images["cat2"];
+        var cat3 = window.document.images["cat3"];
+        var cat4 = window.document.images["cat4"];
+        var cat5 = window.document.images["cat5"];
+
+        cat1.onmouseover = function() {
+            cat1.width += 5;
+        }
+        
+        cat1.onclick = function() {
+            cat1.width = 128;
+        }
+
+        cat2.onmouseover = function() {
+            cat2.width += 5;
+        }
+        
+        cat2.onclick = function() {
+            cat2.width = 128;
+        }
+
+
+        cat3.onmouseover = function() {
+            cat3.width += 5;
+        }
+        
+        cat1.onclick = function() {
+            cat1.width = 128;
+        }
+
+
+        cat4.onmouseover = function() {
+            cat4.width += 5;
+        }
+        
+        cat4.onclick = function() {
+            cat4.width = 128;
+        }
+
+
+        cat5.onmouseover = function() {
+            cat5.width += 5;
+        }
+        
+        cat5.onclick = function() {
+            cat5.width = 128;
+        }
+
+        window.onkeydown = function() {
+            console.log(event.keyCode);
+            if(event.keyCode >= 49 && event.keyCode <= 53 ) {
+                document.images["cat"+((event.keyCode - 48))].width += 5;
+            }
+        };
+
+
+        // num.src = "../images/" + (event.keyCode - 48) + ".png";
+
+
+        
+    </script>
+
+
+
+</body>
+</html>

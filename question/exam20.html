@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #main input[type=radio] {
+            display: none;
+        }
+        
+        #main img {
+            width: 150px;
+            height: 150px;
+        }
+        
+        #main label {
+            display: block;
+            float: left;
+            width: 150px;
+            height: 130px;
+            background-color: #EEEEEE;
+            font-size: 3em;
+            font-weight: bold;
+            text-align: center;
+            font-variant: small-caps;
+            padding-top: 30px;
+        }
+
+        #main .disc {
+            float: left;
+            width: 150px;
+            height: 150px;
+            margin-left: 25px;            
+            margin-top: 5px;
+            transform: rotate(0deg);
+            
+        }
+
+
+        .item {
+            border: 1px solid black;
+            width: 350px;
+            height: 160px;
+        }
+
+        #main input[type=radio]:checked + label {
+            background-color: tomato;
+            color: white;
+        }
+
+        #main input[type=radio]:checked ~ .disc {
+            animation-name: disc;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes disc {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Music</h1>
+        <div class="item">
+            <input type="radio" name="rb" id="rb1">
+            <label for="rb1">Play</label>
+            <div class="disc" id="disc1">
+                <img src="../images/disc/lp01.png" alt="">
+            </div>
+            <div style="clear: left;"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb2">
+            <label for="rb2">Play</label>
+            <div class="disc" id="disc2">
+                <img src="../images/disc/lp02.png" alt="">
+            </div>
+            <div style="clear: left;"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb3">
+            <label for="rb3">Play</label>
+            <div class="disc" id="disc3">
+                <img src="../images/disc/lp03.png" alt="">
+            </div>
+            <div style="clear: left;"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb4">
+            <label for="rb4">Play</label>
+            <div class="disc" id="disc4">
+                <img src="../images/disc/lp04.png" alt="">
+            </div>
+            <div style="clear: left;"></div>
+        </div>
+    </div>		
+    
+    
+</body>
+</html>

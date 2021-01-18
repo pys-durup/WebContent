@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #container {
+            width: 600px;
+        }
+
+        #container #title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .box {
+            display: block;
+            float: left;
+            border: 1px solid black;
+            padding: 20px;
+            width: 150px;
+            height: 400px;
+        }
+
+        .box input[type=button] {
+            display: block;
+            width: 140px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+        #container select {
+            width: 145px;
+            height: 350px;;
+        }
+
+        #button-box {
+            padding-top: 130px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>셀렉트 박스 항목 관리</h1>
+        <div>셀랙트 박스의 항목을 좌,우 이동시키시오</div>
+
+        <hr>
+
+        <form name="form1">
+
+            <div class="box">
+                <div id="title">차단된 친구</div>
+                <select name="sel1" size="10">
+
+                </select>
+            </div>
+            <div class="box">
+                <div id="button-box">
+                    <input type="button" value="Add ▷" name="btn1">
+                    <input type="button" value="◁ Remove" name="btn2">
+                    <input type="button" value="Add All ▷ ▷ " name="btn3">
+                    <input type="button" value="◁ ◁ Remove All" name="btn4">     
+                </div>
+            </div>
+            <div class="box">
+                <div id="title">허용된 친구</div>
+                <select name="sel2" size="10">
+
+                </select>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        var userName = [ "권예진", "권준혁", "김동식", "김세진", "김여정", "노형준", "박민선", "백강현" , "변기현"];
+
+        var sel1 = document.form1.sel1;
+        var sel2 = document.form1.sel2;
+
+        var btn1 = document.form1.btn1;
+        var btn2 = document.form1.btn2;
+        var btn3 = document.form1.btn3;
+        var btn4 = document.form1.btn4;
+
+        console.log(userName.length);
+
+        for (var i=0; i<userName.length; i++) {
+            var op = new Option(userName[i], userName[i]);
+            sel1.options.add(op);
+        }
+
+        btn1.onclick = add;
+        
+        function add() {
+            console.log(sel1.selectedIndex);
+            console.log(sel1.value);
+
+            if(sel1.selectedIndex != -1 ){
+                var op = new Option(sel1.value, sel1.value);
+                sel2.options.add(op);
+                sel1.options.remove(sel1.selectedIndex);
+            }
+        };
+
+        btn2.onclick = remove;
+        
+        function remove() {
+            if(sel1.selectedIndex != -1 ){
+                var op = new Option(sel2.value, sel2.value);
+                sel1.options.add(op);
+                sel2.options.remove(sel2.selectedIndex);
+            }
+        };
+
+
+        btn3.onclick = function() {
+            console.log(sel1.options.length);
+            for(let i=0 ; i<sel1.options.length ; i++){
+                var op = new Option(sel1[i].value, sel1[i].value);
+                console.log(sel1[i].value);
+                sel2.options.add(op);
+            }
+
+            for(let j=sel1.options.length-1 ; j>=0 ; j--) {
+                console.log("remove : " + sel1[j].value + "j = " + j );
+                sel1.options.remove(j);
+            }
+        };
+
+        btn4.onclick = function() {
+            for(let i=0 ; i<sel2.options.length ; i++){
+                var op = new Option(sel2[i].value, sel2[i].value);
+                sel1.options.add(op);
+            }
+
+            for(let j=sel2.options.length-1 ; j>=0 ; j--) {
+                console.log("remove : " + sel2[j].value + "j = " + j );
+                sel2.options.remove(j);
+            }
+        };
+
+        sel1.ondblclick = function() {
+            console.log(sel1.value);
+            add();
+        };
+
+        sel2.ondblclick = function() {
+            remove();
+        }
+
+
+
+    </script>
+</body>
+</html>

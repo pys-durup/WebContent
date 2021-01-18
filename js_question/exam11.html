@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        fieldset {
+            margin: 20px 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>텍스트 박스 복사하기</h1>
+
+        <div>주문하시는 분 저옵를 받으시는 분으로 복사하시오</div>
+
+        <hr>
+
+        <form name="form1">
+            <h3>주문 하기</h3>
+            <fieldset>
+                <legend>주문하시는 분</legend>
+                이름: <input type="text" name="txtName">
+                <div>주소: <input type="text" name="txtAddr"></div>
+            </fieldset>
+            <div><input type="checkbox" name="chk"> 주문하시는 분과 정보가 동일합니다</div>
+            <fieldset>
+                <legend>받으시는 분</legend>
+                <div>이름: <input type="text" name="txtName2"></div>
+                <div>주소: <input type="text" name="txtAddr2"></div>
+            </fieldset>
+
+        </form>
+    </div>
+
+    <script>
+
+        // var txtName = document.all.txtName;
+        var txtName = document.form1.txtName;
+        // var txtAddr = document.all.txtAddr;
+        var txtAddr = document.form1.txtAddr;
+       
+        var txtName2 = document.form1.txtName2;
+        var txtAddr2 = document.form1.txtAddr2;
+
+        var chk = document.form1.chk;
+
+
+        chk.onchange = function() {
+            console.log(chk.checked);
+            console.log(txtName.value);
+            if (chk.checked) {
+                txtName2.value = txtName.value;
+                txtAddr2.value = txtAddr.value;
+            } else {
+                txtName2.value = "";
+                txtAddr2.value = "";
+            }
+        }
+
+    </script>
+</body>
+</html>

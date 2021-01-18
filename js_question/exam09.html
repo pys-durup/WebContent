@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        table td { 
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        table input[type=text] {
+            width: 80px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>회원가입 + 폼 컨트롤 조작</h1>
+        <div>주민번호 입력시 나머지 컨트롤 (생년월일, 성별) 제어를 하시오</div>
+        <ul>
+            <li>주민등록 번호 앞자리 입력 완료 -> 뒷자리 자동 포커스</li>
+            <li>주민등록 번호 앞자리 입력 완료 -> 생년월일 자동 완성</li>
+            <li>주민등록 번호 뒷자리 첫 숫자 입력 -> 성별 자동 체크</li>
+        </ul>
+    
+        <hr>
+        <form name="form1">
+            <table>
+                <tr>
+                    <td> 주민번호</td>
+                    <td>
+                        <input type="text" name="jumin1">
+                        -
+                        <input type="text" name="jumin2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>생년월일</td>
+                    <td>
+                        <input type="text" name="txtYear">년
+                        <input type="text" name="txtMonth">월
+                        <input type="text" name="txtDay">일
+                    </td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td>
+                        <input type="radio" name="rd"> 남자
+                        <input type="radio" name="rd"> 여자
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+
+    </div>
+
+    <script>
+
+        var jumin1 = document.form1.jumin1;
+        var jumin2 = document.form1.jumin2;
+
+        var txtYear = document.form1.txtYear;
+        var txtMonth = document.form1.txtMonth;
+        var txtDay = document.form1.txtDay;
+
+        var rd = document.form1.rd;
+
+        jumin1.onkeyup = function() {
+            if (jumin1.value.length == 6) {
+                // console.log(jumin1.value);
+                // console.log(jumin1.value.substr(0, 2));
+
+                txtYear.value = "19" + jumin1.value.substr(0, 2);
+                txtMonth.value = jumin1.value.substr(2, 2);
+                txtDay.value = jumin1.value.substr(4, 2);
+
+                jumin2.focus();
+            }
+
+            
+        };
+
+        jumin2.onkeyup = function() {
+            if (jumin2.value.length == 1) {
+                if (jumin2.value == 1 || jumin2.value == 3) {
+                    rd[0].checked = true;
+                } else if (jumin2.value == 2 || jumin2.value == 4) {
+                    rd[1].checked = true;
+                }
+            }
+        }
+
+    </script>
+
+</body>
+</html>

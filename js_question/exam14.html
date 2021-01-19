@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <style>
+
+        button {
+            font-size: 3em;
+            padding: 15px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            color: #555;
+        }
+
+        button:enabled {
+            background-color: white;
+        }
+
+        button:disabled {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>버튼 클릭 + 활성화</h1>
+        <div>활성화된 버튼을 클릭하시오</div>
+        <ul>
+            <li>&lt;button&gt; + fontawesome icon</li>
+            <li>흰색 버튼 : btn.disabled = false;</li>
+            <li>회색 버튼 : btn.disabled = true;</li>
+            <li>흰색 버튼 : btn:enabled { background-color: white; }</li>
+            <li>회색 버튼 : btn:disabled { background-color: gray; }</li>
+        </ul>
+
+        <hr>
+
+        <button disabled><i class="fas fa-dog"></i></button>
+        <button disabled><i class="fas fa-paw"></i></button>
+        <button disabled><i class="fas fa-otter"></i></button>
+        <button disabled><i class="fas fa-hippo"></i></button>
+        <button disabled><i class="fas fa-spider"></i></button>
+        <button disabled><i class="fas fa-kiwi-bird"></i></button>
+        <button disabled><i class="fas fa-dragon"></i></button>
+        <button disabled><i class="fas fa-crow"></i></button>
+        <button disabled><i class="fas fa-cat"></i></button>
+        <button disabled><i class="fas fa-dove"></i></button>
+        
+
+    </div>
+
+    <script>
+
+        var picture = document.getElementsByTagName("button");
+        var n=0;
+        var timerId;
+        // alert(picture.length);
+        // picture[0].disabled = false;
+        
+        timerId = setInterval(function() {
+            for (var i=0; i<picture.length; i++) {
+                picture[i].disabled = true;
+            }
+            picture[n].disabled = false;
+            n++;
+            if (n >= picture.length){
+                n = 0;
+            }
+        }, 500);
+
+        
+        for(var i=0; i<picture.length; i++) {
+            picture[i].onclick = function() {
+                document.body.bgColor = "gold";
+                clearInterval(timerId);
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

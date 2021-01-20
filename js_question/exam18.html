@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #content {
+            border: 1px solid black;
+            width: 900px;
+            min-height: 146px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <h1>숫자키 이벤트 + 이미지 동적 생성하기</h1>
+            <div>숫자키를 누르면 하단의 박스(div)안에 이미지를 생성하시오</div>
+            <ul>
+                <li>상단 숫자키 사용 가능</li>
+                <li>우측 숫자키패드 사용 가능</li> 
+            </ul>
+        </div>
+        <hr>
+        <div id="section">
+            <div id="content">
+                <!-- <img src="../images/1.png"> -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        window.onkeydown = function() {
+            // console.log(event.keyCode); // 48~57, 96~105
+            var n;
+
+            if (event.keyCode >= 48 && event.keyCode <= 57) {
+                n = event.keyCode - 48;
+            } else if (event.keyCode >= 96 && event.keyCode <= 105) {
+                n = event.keyCode - 96;
+            }
+            
+            if(n >= 0 && n <= 9 ) {
+
+                document.getElementById("content").innerHTML += "<img src='../images/" + n + ".png'>";
+            }
+            
+        };
+
+
+
+    </script>
+</body>
+</html>

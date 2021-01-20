@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #clock span {
+            font-size: 13em;
+            color: #555;
+
+        }
+
+        #clock {
+            border: 1px solid #555;
+        }
+
+        #container .btn {
+            width: 150px;
+            height: 50px;
+            padding: 10px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>스톱워치(이미지버전)</h1>
+        <div>각 버튼의 활성화/비활성화 제어</div>
+        <hr>
+        <div id="clock">
+            <img src="../images/0.png" alt="" id="hour1">
+            <img src="../images/0.png" alt="" id="hour2">
+            <span>:</span>
+            <img src="../images/0.png" alt="" id="min1">
+            <img src="../images/0.png" alt="" id="min2">
+            <span>:</span>
+            <img src="../images/0.png" alt="" id="sec1">
+            <img src="../images/0.png" alt="" id="sec2">
+        </div>
+        <div>
+            <input type="button" value="시작" class="btn" id="btnStart">
+            <input type="button" value="멈춤" class="btn" id="btnStop">
+            <input type="button" value="종료" class="btn" id="btnEnd">
+        </div>
+    </div>
+
+    <script>
+
+        var hour1 = document.getElementById("hour1");
+        var hour2 = document.getElementById("hour2");
+        var min1 = document.getElementById("min1");
+        var min2 = document.getElementById("min2");
+        var sec1 = document.getElementById("sec1");
+        var sec2 = document.getElementById("sec2");
+
+        var btnStart = document.getElementById("btnStart");
+        var btnStop = document.getElementById("btnStop");
+        var btnEnd = document.getElementById("btnEnd");
+
+        var timerId;
+        var n = 1;
+
+
+        btnStart.onclick = function() {
+            btnStop.disabled = false;
+            btnEnd.disabled = false;
+            btnStart.disabled = true;
+
+            sec2.src="../images/" + n + ".png";
+
+            timerId = setInterval(function() {
+                n++;
+                sec2.src="../images/" + n + ".png";
+
+            }, 1000);
+
+        }
+
+
+
+
+
+
+
+
+        btnStop.onclick = function() {
+            btnStop.disabled = true;
+            btnEnd.disabled = false;
+            btnStart.disabled = false;
+        }
+
+        btnEnd.onclick = function() {
+            btnStop.disabled = true;
+            btnEnd.disabled = true;
+            btnStart.disabled = false;
+
+        }
+
+    </script>
+</body>
+</html>

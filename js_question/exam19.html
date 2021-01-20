@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #content table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin-top: 20px;
+
+        }
+
+        #content td {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>방향키 + 테이블 행렬 조작하기</h1>
+            <div>방향키 조작에 따라 테이블의 행/열을 조작하시오</div>
+            <ul>
+                <li>좌우 : 열 추가/삭제</li>
+                <li>상하 : 행 추가/삭제</li>
+                <li>셀에 숫자를 할당하시오</li>
+            </ul>
+        </div>
+        <hr>
+        <div id="section">
+            <div id="content">
+                <table>
+                    <tbody id="tbody1">
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var tbody1 = document.getElementById("tbody1");
+        var low = 2;
+        var col = 2;
+        
+        
+
+        window.onkeydown = function() {
+            console.log(event.keyCode); //37 38 39 40  좌 상 우 하
+            tbody1.innerHTML = "";
+            var n = 1;
+
+            if(event.keyCode == 40) {
+                low++;
+                
+            } else if(event.keyCode == 38) {
+                low--;
+            } else if(event.keyCode == 37) {
+                col--;
+            } else if(event.keyCode == 39) {
+                col++;
+            }
+
+            if (low == 0) low = 1;
+            if (col == 0) col = 1;
+
+            for (var i=1; i<=low; i++) {
+
+                var code = "";
+                code = "<tr>";
+                
+                for(var j=1; j<=col ; j++) {
+                    code += "<td>";
+                    code += n;
+                    code += "</td>";
+                    n++;
+                }
+                code += "</tr>";
+
+                tbody1.innerHTML += code;
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            background-color: gray;
+            
+        }
+
+        #container {
+            width: 800px;
+            margin: 0px auto;
+            color: white;
+            position: static;
+
+        }
+
+        .cat {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: none;
+        }
+
+        #content {
+            border: 10px solid black; 
+            width: 1000px; 
+            height: 700px; 
+            margin: 50px auto; 
+            overflow: hidden; 
+            position: relative; 
+            left: 0px; 
+            top: 0px; 
+            background-color: white;
+        }
+
+ 
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>이미지 + 연속 이동하기</h1>
+            <div>마우스의 움직임을 따라 고양이를 연속으로 움직이시오</div>
+        </div>
+        <hr>
+        <div id="section">
+            <div id="content">
+                <img class="cat" src="../images/catty01.png">
+                <img class="cat" src="../images/catty02.png">
+                <img class="cat" src="../images/catty03.png">
+                <img class="cat" src="../images/catty04.png">
+                <img class="cat" src="../images/catty05.png">
+                <img class="cat" src="../images/catty06.png">
+                <img class="cat" src="../images/catty07.png">
+                <img class="cat" src="../images/catty08.png">
+                <img class="cat" src="../images/catty09.png">
+                <img class="cat" src="../images/catty10.png">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var cat = document.getElementsByClassName("cat");
+
+        // alert(cat.length);
+
+        var widthX = 64;
+        var heightY = 64;
+        var positionX = [];
+        var positionY = [];
+
+        // console.log(document.getElementById("content").getBoundingClientRect().top.)
+
+
+
+        window.onmousemove = function() {
+
+            var x = event.clientX;
+            var y = event.clientY;
+
+            positionX.push(x);
+            positionY.push(y);
+
+            if (positionX.length > cat.length) {
+                positionX.shift();
+                positionY.shift();
+            }
+
+            // cat[0].style.left = event.clientX - widthX + "px";
+            // cat[0].style.top = event.clientY - heightY + "px";
+            for (var i=0; i<cat.length; i++) {
+                if (positionX[i] != null) {
+                    cat[i].style.left = positionX[i] - widthX - content.offsetLeft + "px";
+                    cat[i].style.top = positionY[i] - heightY - content.offsetTop + "px";
+                    cat[i].style.display = "block";
+                }
+            }
+        };
+
+
+    </script>
+</body>
+</html>

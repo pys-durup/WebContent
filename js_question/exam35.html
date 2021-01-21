@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 1250px;
+            margin: 0px auto;
+        }
+
+        #content table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin-top: 20px;
+
+        }
+
+        #content td {
+            border: 1px solid black;
+            width: 125px;
+            height: 125px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>발자국 ver. 클릭</h1>
+            <div>발자국이 눌려진 곳은 점점 흙이 쌓인다</div>
+        </div>
+        <ul>
+            <li>td.style.backgroundColor = rgb(n1,n2,n3)</li>
+            <li>더러워진 칸은 더이상 누를 수 없다.(이벤트 해제)</li>
+        </ul>
+        <hr>
+        <div id="section">
+            <div id="content">
+                <table>
+                    <tr>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                    </tr>
+                    <tr>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                    </tr>
+                    <tr>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                    </tr>
+                    <tr>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                    </tr>
+                    <tr>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                        <td data-color="255"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- <img src="../images/dog-foot.png" alt=""> -->
+
+    </div>
+    <script>
+
+        var td = document.getElementsByTagName("td");
+        var n;
+
+        console.log(td.length);
+
+        for (let i=0; i<td.length; i++){
+
+            td[i].onclick = function() {
+                n = td[i].dataset["color"];
+                n -= 25;
+
+                if(td[i].innerHTML == "" && n > 0) {
+                    console.log("click" + i);
+                    clear();
+                    td[i].innerHTML = "<img src='../images/dog-foot.png' style='width:121px; height:121px'>";
+
+
+                    td[i].style.backgroundColor = "rgb("+ n + "," + n + "," + n + ")"
+                    td[i].dataset["color"] = n;
+                } 
+            }
+        }
+
+
+        function clear() {
+            for (let i=0; i<td.length; i++){
+                td[i].innerHTML = "";
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

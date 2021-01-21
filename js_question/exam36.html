@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 800px;
+            margin: 0px auto;
+        }
+
+        #bird {
+
+            width: 200px;
+            height: 140px;
+            background-image: url(../images/fly.png);
+            transition: transform 3s;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>날기</h1>
+            <div>새를 날게하시오</div>
+            <ul>
+                <li>이미지 전체 크기 : 800 x 1400 / 한장면 크기 : 200 x 140</li>
+                <li>배경색 : #f5f5f5</li>
+            </ul>
+        </div>
+        <hr>
+        <div id="section">
+            <div id="content">
+                <div id="bird"></div>
+                <label for="">새의 속도 :</label>
+                <select id="selSpeed">
+                    <option value="200">느림</option>
+                    <option value="100">보통</option>
+                    <option value="50">빠름</option>
+                    <option value="10">엄청빠름</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var bird = document.getElementById("bird");
+        var selSpeed = document.getElementById("selSpeed");
+        var timer;
+        var n = 0;
+
+        window.onload = fly;
+
+        selSpeed.onchange = function () {
+            clearInterval(timer);
+            fly()
+        }
+
+
+        function fly() {
+            timer = setInterval(() => {
+                n -= 200;
+                bird.style.backgroundPosition = n + "px 0px";
+
+                if (selSpeed.value == 10) {
+                    bird.style.transform = "translate(0px, -1000px)";
+                }
+
+            }, selSpeed.value);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cat {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            transition: all 0.7s;
+            transition-timing-function: linear ;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>고양이 움직이기 ver.등속</h1>
+            <div>고양이를 마우스 클릭한 장소로 이동시키시오</div>
+            <ul>
+                <li>CSS : transition</li>
+            </ul>
+        </div>
+        <hr>
+        <img src="../images/catty01.png" id="cat">
+    </div>
+
+
+    <script>
+
+        var cat = document.getElementById("cat");
+
+        var widthX = 64;
+        var heightY = 64;
+
+        window.onmousedown = function () {
+            cat.style.left = event.clientX - widthX + "px";
+            cat.style.top = event.clientY - heightY + "px";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 800px;
+            margin: 0px auto;
+        }
+
+        #cat {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            /* transition: all 0.7s; */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>고양이 움직이기 ver.Path</h1>
+            <div>고양이를 마우스 경로를 따라 움직이시오</div>
+            <ul>
+                <li>왼쪽 Ctrl을 누른채 마우스를 움직인다</li>
+                <li>Ctrl을 떼고, 시작버튼을 누른다</li>
+                <li>CSS : transition</li>
+                <li>JavaScript : setInteval() + event.ctrlKey</li>
+            </ul>
+        </div>
+        <hr>
+        <div id="section">
+            <div id="content">
+                <img src="../images/catty01.png" id="cat">
+            </div>
+            <div>
+                <input type="button" id="btn1" value="시작">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var cat = document.getElementById("cat");
+        var btn1 = document.getElementById("btn1");
+
+        var positionX = [];
+        var positionY = [];
+        var timer = 0;
+
+        window.onmousemove = function() {
+            
+            var x = event.clientX;
+            var y = event.clientY;
+
+            if (event.ctrlKey) {
+                console.log(x, y);
+    
+                positionX.push(x);
+                positionY.push(y);
+            }
+
+        }
+
+        btn1.onclick = function() {
+            console.log(positionX.length);
+            console.log(positionY.length);
+
+            timer = setInterval(() => {
+                cat.style.left = parseInt(positionX.shift()) + "px";
+                cat.style.top = parseInt(positionY.shift()) + "px";
+
+                if (positionX.length == 0) {
+                    clearInterval(timer);
+                }
+
+            }, 5);
+
+        }
+
+
+    </script>
+</body>
+</html>

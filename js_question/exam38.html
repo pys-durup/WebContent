@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 1200px;
+            margin: 0px auto;
+        }
+
+        #content .btn {
+            background-color: white;
+            border: 1px solid #999;
+            width: 80px;
+            height: 45px;
+            cursor: pointer;
+
+        }
+
+        #content #btnstart {
+            background-color: tomato;
+            color: white;
+            width: 80px;
+            height: 45px;
+        }
+
+        #view {
+            margin-top: 30px;
+            width: 1100px;
+            margin: 30px auto;
+        }
+
+        #content {
+            width: 1000px;
+            margin: 30px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>이미지 뷰어</h1>
+            <div>이미지 뷰어를 구현하시오.</div>
+            <ul>
+                <li>▷/|| 버튼을 누르면 시작/멈춤을 제어한다.</li>
+                <li>1초마다 순차적으로 이미지가 변경된다.</li>
+                <li>특정 버튼을 눌러 이미지를 변경한다.</li>
+                <li>자동 실행 중 특정 버튼을 누르면 타이머는 중단되고 누른 이미지가 출력된다.</li>
+            </ul>
+        </div>
+        <hr>
+        <div id="section">
+            <div id="content">
+                <input type="button" id="btnstart" value="▷">
+                <input type="button" value="[1]" class="btn">
+                <input type="button" value="2" class="btn">
+                <input type="button" value="3" class="btn">
+                <input type="button" value="4" class="btn">
+                <input type="button" value="5" class="btn">
+                <input type="button" value="6" class="btn">
+                <input type="button" value="7" class="btn">
+                <input type="button" value="8" class="btn">
+                <input type="button" value="9" class="btn">
+                <input type="button" value="10" class="btn">
+            </div>
+            <div id="view">
+                <img src="../images/wall01.jpg">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var btn = document.getElementsByClassName("btn");
+        var btnstart = document.getElementById("btnstart");
+        var view = document.getElementById("view");
+
+        var time = 0;
+        var now = 1; // 현재 표시되고 있는 그림번호
+
+        // var btnArray = [];
+        // for (var i = 0; i < btn.length; i++) {
+        //     btnArray.push(btn[i]);
+        // }
+
+        // console.log(btnArray.length);
+
+        for (let i = 0; i < btn.length; i++) {
+
+            btn[i].onclick = function () {
+
+                clearInterval(timer);
+                btnstart.value = "▷";
+
+                view.innerHTML = "<img src='../images/wall" + addZero(i + 1) + ".jpg'>"
+                console.log(i);
+                now = i;
+                console.log(now);
+
+                // [] 표시& 제거
+                for (var j = 0; j < btn.length; j++) {
+                    if (btn[j].value.length > 2) {
+                        // console.log(btn[j].value);
+                        btn[j].value = btn[j].value.replace("[", "");
+                        btn[j].value = btn[j].value.replace("]", "");
+                    }
+                }
+
+                event.srcElement.value = "[" + event.srcElement.value + "]";
+                // console.log(event.srcElement);
+            }
+        }
+
+        btnstart.onclick = function () {
+           
+
+            if (btnstart.value == "||") {
+                btnstart.value = "▷";
+                console.log(timer);
+                clearInterval(timer);
+               
+            
+            } else {
+                btnstart.value = "||";
+                
+                timer = setInterval(() => {
+                    console.log(now);
+                    view.innerHTML = "<img src='../images/wall" + addZero(now + 1) + ".jpg'>"
+                    
+
+                    // [] 표시& 제거
+                    for (var j = 0; j < btn.length; j++) {
+                        if (btn[j].value.length > 2) {
+                            // console.log(btn[j].value);
+                            btn[j].value = btn[j].value.replace("[", "");
+                            btn[j].value = btn[j].value.replace("]", "");
+                        }
+                    }
+
+                    btn[now].value = "[" + btn[now].value + "]";
+
+                    now++;
+
+                    if (now > 9) {
+                        now = 0;
+                    }
+
+                }, 1000);
+                console.log(timer);
+            }
+
+
+
+        }
+
+
+        function addZero(num) {
+            if (num < 10) {
+                return "0" + num;
+            } else {
+                return num;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

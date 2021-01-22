@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 800px;
+            margin: 0px auto;
+        }
+
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 50px auto;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 126px;
+            height: 126px;
+            position: relative;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        #tbl1 td img {
+            display: block;
+        }
+
+        .icon {
+            transition: all .5s;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>집합 이벤트 + CSS</h1>
+            <div>셀 클릭을 구현하시오.</div>
+            <ul>
+                <li>transform: translate(126px, 126px);</li>
+                <li>transition: all 1s;</li>
+                <li>overflow: hidden;</li>
+                <li>setTimeout();</li>
+            </ul>
+        </div>
+        <hr>
+        <div id="section">
+            <div id="content">
+                <table id="tbl1">
+                    <tr>
+                        <td><img src="../images/rect_icon01.png" class="icon"></td>
+                        <td><img src="../images/rect_icon02.png" class="icon"></td>
+                        <td><img src="../images/rect_icon03.png" class="icon"></td>
+                        <td><img src="../images/rect_icon04.png" class="icon"></td>
+                        <td><img src="../images/rect_icon05.png" class="icon"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../images/rect_icon06.png" class="icon"></td>
+                        <td><img src="../images/rect_icon07.png" class="icon"></td>
+                        <td><img src="../images/rect_icon08.png" class="icon"></td>
+                        <td><img src="../images/rect_icon09.png" class="icon"></td>
+                        <td><img src="../images/rect_icon10.png" class="icon"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../images/rect_icon11.png" class="icon"></td>
+                        <td><img src="../images/rect_icon12.png" class="icon"></td>
+                        <td><img src="../images/rect_icon13.png" class="icon"></td>
+                        <td><img src="../images/rect_icon14.png" class="icon"></td>
+                        <td><img src="../images/rect_icon15.png" class="icon"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../images/rect_icon16.png" class="icon"></td>
+                        <td><img src="../images/rect_icon17.png" class="icon"></td>
+                        <td><img src="../images/rect_icon18.png" class="icon"></td>
+                        <td><img src="../images/rect_icon01.png" class="icon"></td>
+                        <td><img src="../images/rect_icon02.png" class="icon"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../images/rect_icon03.png" class="icon"></td>
+                        <td><img src="../images/rect_icon04.png" class="icon"></td>
+                        <td><img src="../images/rect_icon05.png" class="icon"></td>
+                        <td><img src="../images/rect_icon06.png" class="icon"></td>
+                        <td><img src="../images/rect_icon07.png" class="icon"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var icon = document.getElementsByClassName("icon");
+        var timer = 0;
+        
+
+        for (var i=0; i<icon.length; i++) {
+            icon[i].onclick = function() {
+
+                if (timer == 0) {
+                    event.srcElement.style.transform = "translate(126px, 126px)";
+                    
+                    var temp = event.srcElement;
+                    timer = setTimeout(() => {
+                        temp.style.transform = "translate(0px, 0px)";
+                        timer = 0;
+                    }, 1000);
+                }
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

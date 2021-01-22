@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            /* background-color: #555; */
+            
+        }
+
+        #container {
+            position: relative;
+        }
+
+        #scope {
+            width: 700px;
+            height: 700px;
+            margin: 70px auto;
+            border: 10px solid black;
+            border-radius: 50%;
+            background-color: white;
+            /* overflow: hidden; */
+        }
+
+        #bar1 {
+            border-top: 3px solid tomato;
+            width: 700px;
+            position: relative;
+            left: 0px;
+            top: 348px;
+        }
+
+        #bar2 {
+            border-top: 3px solid tomato;
+            width: 700px;
+            position: relative;
+            left: 0px;
+            top: 348px;
+            transform: rotate(90deg);
+        }
+
+        .target {
+            position: absolute;
+            left: 595px;
+            top: 300px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="scope">
+            <div id="bar1"></div>
+            <div id="bar2"></div>
+            
+            <!-- <img src="../images/catty01.png" class="target"> -->
+        </div>
+    </div>
+
+    <script>
+
+        var scope;
+        var timer1;
+        var timer2;
+        var objectTarget;
+
+        // var image = document.createElement("div");
+        // image.innerHTML = "<img src='../images/catty01.png'>";
+        
+        window.onload = function() {
+            scope = document.getElementById("scope");
+            timer2 = setTimeout(run, (parseInt(Math.random() * 3) + 3) * 1000); 
+
+            scope.onmousedown = function() {
+                console.log(objectTarget);
+                if(parseInt(objectTarget.style.left) >= 500 && parseInt(objectTarget.style.left)<= 595){
+                    scope.style.backgroundColor = "tomato";
+                    clearInterval(timer1);
+                    clearTimeout(timer2);
+                } else {
+                    scope.style.backgroundColor = "tomato";
+                    setTimeout(function() {
+                        scope.style.backgroundColor = "white";
+                    }, 100)
+                }
+            }
+
+            scope.onmouseup = function() {
+                scope.style.backgroundColor = "white";
+            }
+        }
+
+        function run() {
+
+            if (objectTarget) {
+                scope.removeChild(objectTarget);
+                clearTimeout(timer1);
+            }
+
+            objectTarget = document.createElement("img");
+            objectTarget.setAttribute("src", "../images/catty01.png");
+            // objectTarget.className = "target";
+            objectTarget.style.position = "absolute";
+            objectTarget.style.left = "0px"
+            objectTarget.style.top = "300px"
+            scope.appendChild(objectTarget);
+    
+            timer1 = setInterval(() => {
+                objectTarget.style.left = parseInt(objectTarget.style.left) + 10 + "px";
+            }, parseInt(Math.random() * 30 ));
+
+            timer2 = setTimeout(run, (parseInt(Math.random() * 3) + 3) * 1000); 
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

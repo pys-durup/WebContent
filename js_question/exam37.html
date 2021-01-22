@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 800px;
+            margin: 0px auto;
+        }
+
+        .work {
+            width: 128px;
+            height: 128px;
+            background-image: url("../images/work.png");
+            /* border: 1px solid black; */
+            /* transition: translate, 3s; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>걷기</h1>
+            <div>사람을 걷게하시오</div>
+            <ul>
+                <li>첫번째 사람 : 그냥 걷는다</li>
+                <li>두번째 사람 : 누르면 앞으로 간다</li>
+                <li>세번째 사람 : 누르면 걷기 시작하고, 다시 누르면 앞으로 간다</li>
+                <li>네번째 사람 : 왔다 갔다 걷는다.</li>
+                <li>이미지 전체 크기 : 512 x 256 / 한 장면 크기 : 128 x 128</li>
+            </ul>
+        </div>
+        <hr>
+        <div id="section">
+            <div id="content" style="margin-top: 50px;">
+                <div class="work" id="work1"></div>
+                <div class="work" id="work2"></div>
+                <div class="work" id="work3"></div>
+                <div class="work" id="work4"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var work1 = document.getElementById("work1");
+        var work2 = document.getElementById("work2");
+        var work3 = document.getElementById("work3");
+        var work4 = document.getElementById("work4");
+        var x1 = 0;
+        var y1 = 0;
+
+        var timer1 = setInterval(() => {
+            work1.style.backgroundPosition = x1 + "px " + y1 + "px";
+            x1 -= 128;
+            if (x1 <= -(128 * 4)) {
+                x1 = 0;
+                y1 += 128;
+                if (y1 >= (128 * 2)) {
+                    y1 = 0;
+                }
+            }
+        }, 100);
+
+
+
+        // 2
+        var x2 = 0;
+        var y2 = 0;
+        var go2 = false;
+        var distance2 = 0;
+
+        work2.onclick = function () { go2 = true; };
+
+        var timer2 = setInterval(function () {
+
+            work2.style.backgroundPosition = x2 + "px " + y2 + "px";
+            x2 -= 128;
+            if (x2 <= -(128 * 4)) {
+                x2 = 0;
+                y2 += 128;
+                if (y2 >= (128 * 2)) {
+                    y2 = 0;
+                }
+            }
+
+            if (go2) {
+                work2.style.transform = "translate(" + distance2 + "px, 0px)";
+                distance2 += 10;
+            }
+        }, 100);
+
+
+
+
+        // 3 
+        var x3 = 0;
+        var y3 = 0;
+        var go3 = false;
+        var distance3 = 0;
+
+        work3.onclick = function () {
+            if (go3 == 0) {
+                var timer3 = setInterval(() => {
+                    work3.style.backgroundPosition = x3 + "px " + y3 + "px";
+                    x3 -= 128;
+                    if (x3 <= -(128 * 4)) {
+                        x3 = 0;
+                        y3 += 128;
+                        if (y3 >= (128 * 2)) {
+                            y3 = 0;
+                        }
+                        if (go3 == 2) {
+                            work3.style.transform = "translate(" + distance3 + "px, 0px)";
+                            distance3 += 10;
+                        }
+                    }
+                }, 100);
+                go3 = 1;
+            } else {
+                go3 = 2;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

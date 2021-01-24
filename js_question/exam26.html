@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            width: 128px;
+            height: 128px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>마우스 + 동적 이미지 추가하기</h1>
+            <div>마우스를 클릭하면 이미지를 추가하시오</div>
+            <ul>
+                <li>최대 10개까지만 출력하시오(오래된 순으로 삭제)</li>
+            </ul>
+        </div>
+        <hr>
+        <div>
+           <div id="box1" class="box"></div>
+           <div id="box2" class="box"></div>
+           <div id="box3" class="box"></div>
+           <div id="box4" class="box"></div>
+           <div id="box5" class="box"></div>
+           <div id="box6" class="box"></div>
+           <div id="box7" class="box"></div>
+           <div id="box8" class="box"></div>
+           <div id="box9" class="box"></div>
+           <div id="box10" class="box"></div>
+        </div>
+    </div>
+
+    <script>
+
+        var box = document.getElementsByClassName("box");
+        var count = 0;
+
+        window.onmousedown = function() {
+            var n = parseInt(Math.random() * 9) + 1;
+
+            var x = event.clientX;
+            var y = event.clientY;
+            console.log(x , y);
+
+            // var img = document.createElement("img");
+            // img.setAttribute("src", "../images/m0" + n + ".png");
+            // img.style.position = "absolute";
+            // img.style.left = x - 64 + "px";
+            // img.style.top = y - 64 + "px";
+            // box[count].appendChild(img);
+    
+            box[count].innerHTML = "<img src='../images/m0" + n + ".png'>";
+            box[count].style.position = "absolute";
+            box[count].style.left = x - 64 + "px";
+            box[count].style.top = y - 64 + "px";
+            
+            count++;
+
+            if(count > 9) count = 0;
+
+            // document.getElementById("box" + n).style.left = x - 75 + "px";
+            // document.getElementById("box" + n).style.top = y - 75 + "px";
+
+
+        }
+
+
+
+    </script>
+</body>
+</html>

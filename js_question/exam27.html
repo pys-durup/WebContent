@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>마우스 + 이미지 이동하기</h1>
+            <div>마우스를 어느 방향에서 올리느냐에 따라 이미지를 좌/우로 이동하시오</div>
+        </div>
+        <hr>
+        <div>
+            <img src="../images/item15.gif" id="img1" style="position: absolute; left: 600px; top: 300px;">
+        </div>
+    </div>
+
+
+    <script>
+
+        var img1 = document.getElementById("img1");
+
+        
+
+        img1.onmouseover = function() {
+            console.log(img1.style.left);
+            var x = event.clientX;
+            var y = event.clientY;
+            console.log(x , y);
+
+            if(x > parseInt(img1.style.left) + 61) {
+                img1.style.left = parseInt(img1.style.left) - 20 + "px";
+            } else {
+                img1.style.left = parseInt(img1.style.left) + 20 + "px";
+            }
+        }
+
+
+
+
+    </script>
+</body>
+</html>

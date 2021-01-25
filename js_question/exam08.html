@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #section {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        #section img {
+            float: left;
+            margin: 10px;
+            border: 10px solid #cccccc;
+        }
+        
+        #section input[type="button"] {
+            width: 230px;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 7px;
+            padding: 5px 22px;
+            border: 10px solid #CCCCCC;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="section">
+        <h1>Pattern Lock</h1>
+        <div>패턴을 그리고 입력 버튼을 누르시오</div>
+        <div><ul>password : 'L'</ul></div>  
+
+        <div>
+            <img src="../images/rect_icon01.png" alt="" name="icon1">
+            <img src="../images/rect_icon02.png" alt="" name="icon2">
+            <img src="../images/rect_icon03.png" alt="" name="icon3">
+            <img src="../images/rect_icon04.png" alt="" name="icon4">
+            <img src="../images/rect_icon05.png" alt="" name="icon5">
+            <img src="../images/rect_icon06.png" alt="" name="icon6">
+            <img src="../images/rect_icon07.png" alt="" name="icon7">
+            <img src="../images/rect_icon08.png" alt="" name="icon8">
+            <img src="../images/rect_icon09.png" alt="" name="icon9">
+        </div>
+        <div style="clear: both;">
+            <input type="button" value="RESET" name="resetBtn" onclick="reset();";>
+            <input type="button" value="INPUT" name="inputBtn" onclick="input();">
+        </div>
+    </div>
+
+
+    <script>
+
+        var list;
+        var pw = "";
+
+    
+        list = window.document.images;
+
+        for (var i=0; i<list.length; i++) {
+            list[i].onmouseover = function() {
+                pw += getNum(event.srcElement.src);
+                event.srcElement.src = "../images/rect_icon10.png";
+            };
+        }
+
+        function getNum(url) {
+            var index = url.lastIndexOf(".");
+            return url.substr(index-1, 1);
+        }
+
+        function reset() {
+            for (var i=0; i<list.length; i++) {
+                list[i].src = "../images/rect_icon0" + (i+1) + ".png";
+            }
+            pw = "";
+        }
+
+        function input() {
+            if(pw == "14789") {
+                window.location.href="http://google.com";
+            } else {
+                alert("error!");
+                reset();
+            }
+        }
+       
+
+
+        // var icon1 = window.document.images["icon1"];
+        // var icon2 = window.document.images["icon2"];
+        // var icon3 = window.document.images["icon3"];
+        // var icon4 = window.document.images["icon4"];
+        // var icon5 = window.document.images["icon5"];
+        // var icon6 = window.document.images["icon6"];
+        // var icon7 = window.document.images["icon7"];
+        // var icon8 = window.document.images["icon8"];
+        // var icon9 = window.document.images["icon9"];
+
+        // var resetBtn = window.document.all["resetBtn"];
+        // var inputBtn = window.document.all["inputBtn"];
+
+        // icon1.onmouseover = function() {
+        //     icon1.src = "../images/rect_icon10.png";
+        // }
+        // icon2.onmouseover = function() {
+        //     icon2.src = "../images/rect_icon10.png";
+        // }
+        // icon3.onmouseover = function() {
+        //     icon3.src = "../images/rect_icon10.png";
+        // }
+        // icon4.onmouseover = function() {
+        //     icon4.src = "../images/rect_icon10.png";
+        // }
+        // icon5.onmouseover = function() {
+        //     icon5.src = "../images/rect_icon10.png";
+        // }
+        // icon6.onmouseover = function() {
+        //     icon6.src = "../images/rect_icon10.png";
+        // }
+        // icon7.onmouseover = function() {
+        //     icon7.src = "../images/rect_icon10.png";
+        // }
+        // icon8.onmouseover = function() {
+        //     icon8.src = "../images/rect_icon10.png";
+        // }
+        // icon9.onmouseover = function() {
+        //     icon9.src = "../images/rect_icon10.png";
+        // }
+
+        // resetBtn.onclick = function() {
+        //     icon1.src = "../images/rect_icon01.png";
+        //     icon2.src = "../images/rect_icon02.png";
+        //     icon3.src = "../images/rect_icon03.png";
+        //     icon4.src = "../images/rect_icon04.png";
+        //     icon5.src = "../images/rect_icon05.png";
+        //     icon6.src = "../images/rect_icon06.png";
+        //     icon7.src = "../images/rect_icon07.png";
+        //     icon8.src = "../images/rect_icon08.png";
+        //     icon9.src = "../images/rect_icon09.png";
+        // }
+
+
+    </script>
+</body>
+</html>

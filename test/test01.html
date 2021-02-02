@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .alert {
+            padding: 15px;
+            border: 1px solid #d6e9c6;
+            border-radius: 4px;
+            color: #3c763d;
+            background-color: #dff0d8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+          let div = document.createElement('div');
+          div.className = "alert";
+          div.innerHTML = "<strong>안녕하세요!</strong> 중요 메시지를 확인하셨습니다.";
+
+          document.body.append(div);
+        //   setTimeout(() => div.remove(), 1000);
+
+        let div2 = div.cloneNode(true); // 메시지 창 복제
+        div2.querySelector('strong').innerHTML = '안녕히 가세요!'; // 복제한 메시지 창 내용 수정
+
+        div.after(div2); // 복제한 메시지 창을 기존 메시지 창 다음에 보여줌
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<html>
+<body>
+  <div>시작</div>
+
+  <ul id="test1">
+    <li>항목</li>
+  </ul>
+
+  <div>끝</div>
+
+  <script>
+    // for (let i = 0; i < document.body.childNodes.length; i++) {
+    //   console.log(document.body.childNodes[i] ); // Text, DIV, Text, UL, ... , SCRIPT
+    // }
+
+    for (let elem of document.body.children) {
+        console.log(elem); // DIV, UL, DIV, SCRIPT
+    }
+
+    let dogNames = ['Rocket','Flash','Bella','Slugger'];
+    dogNames.toString(); // Rocket,Flash,Bella,Slugger
+
+    console.log(dogNames);
+
+  </script>
+  ...추가 내용...
+</body>
+</html>

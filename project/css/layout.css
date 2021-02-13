@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'Jal_Onuel';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, p, div, span, ul, li, dl, dt, dd, table, th, td, a, blockquote, input, textarea, fieldset, h1, h2, h3, h4, h5, h6, small, strong, b, i, em {
+    font-family: 'Jal_Onuel';
+    /* color: #555555; */
+    /* line-height: 1.5em; */
+    /* font-size: 15px; */
+}
+
+
+html {
+	position: relative;
+	left: 0;
+	top: 0;
+	min-height: 100%
+    
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+	background: #EEEEEE;   
+}
+
+body {
+	overflow-y: scroll;
+    height: 101%;
+}
+
+div {
+    padding: 0;
+}
+
+/* 기본 */
+
+
+body {
+    background-color: #ebebeb;
+}
+
+#headerContainer {
+    color: white;
+}
+
+#container {
+    width: 1100px;
+    height: 900px;
+    margin: 0 auto;
+    color: black;
+}
+
+#header {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #B6B7D3;
+}
+
+#header #logo {
+    float: left;
+}
+
+#header #aside {
+    float: right;
+}
+
+#nav {
+    width: 100%;
+    height: 50px;
+    line-height: 47px;
+    background-color: #9a9cd1;
+}
+
+ul, li{
+    padding: 0;
+    margin: 0;
+}
+
+#nav li {
+    float: left;
+    list-style: none;
+    margin-left: 20px; 
+}
+
+#nav li:hover {
+    cursor: pointer;
+    border-bottom: 3px solid #3d42d1
+}
+
+#side {
+    float: left;
+    width: 299px;
+    height: 900px;
+    line-height: 50px;
+    background-color: #FFFFFF;
+    border-right: 1px solid #CCCCCC;
+}
+
+#side li {
+    list-style: none;
+    height: 25px;
+    margin-left: 20px;
+}
+
+#side .sideName {
+    border-bottom: solid 1px #CCCCCC;
+    padding-bottom: 5px;
+}
+
+.sideGroup {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+#content {
+    float: left;
+    width: 780px;
+    height: 900px;
+    line-height: 50px;
+    background-color: #FFFFFF;
+    padding: 10px;
+}
+
+#content #info {
+    border-bottom: 1px solid #CCCCCC;
+}
+
+#content .item {
+    width: 760px;
+    border: 1px solid black;
+    background-color: white;
+
+}
+
+
+#content .item .leftItem {
+    width: 70px;
+    float: left;
+}
+
+#content .item .itemContent{
+    width: 400px;
+    float: left;
+}
+
+
+#content .item .rightItem{
+    width: 100px;
+    float: right;
+}
+
+
+#content .item .listItem {
+    margin-left: 10px;
+}
+
+
+
+#footer {
+    float: left;
+    width: 1100px;
+    height: 150px;
+    line-height: 50px;
+    background-color: #7c7ed1;
+}

@@ -14,7 +14,6 @@
 
        <!-- Bootstrap -->
        <link rel="stylesheet" href="css/bootstrap.css">
-       <!-- <link rel="stylesheet" href="css/main.css"> -->
        <link rel="stylesheet" href="css/layout.css">
        <script src="js/jquery-2.2.4.js"></script>
        <script src="js/bootstrap.js"></script>
@@ -41,21 +40,16 @@
             <div class="sideGroup">
                 <div class="sideName">채용중인 포지션</div>
                 <ul> 
-                    <li>지원자</li>
-                    <li>매치업</li>
-                    <li>포지션</li>
-                    <li>회사정보</li>
-                    <li>계정관리</li>
+                    <li class="side-list-item side-list-item-selected" onclick="location.href='layout.html';"> 전체보기 </li>
+                    <li class="side-list-item">Android developer</li>
+                    <li class="side-list-item">IOS developer</li>
+                    <li class="side-list-item" onclick="location.href='matchup.html';">매치업</li>
                 </ul>
             </div>
             <div class="sideGroup">
                 <div class="sideName">마감된 포지션</div>
                 <ul> 
-                    <li>지원자</li>
-                    <li>매치업</li>
-                    <li>포지션</li>
-                    <li>회사정보</li>
-                    <li>계정관리</li>
+                    <li class="side-list-item">서버개발자</li>
                 </ul>
             </div>
             
@@ -63,36 +57,177 @@
 
         <!-- CONTENT -->
         <div id="content">
+            <div>전체보기</div>
+            <!-- 정보 nav -->
             <div id="info">
-                신규(1182) 서류통과(!0) 최종합격(1) 불합격(623) 기간만료(0)
+                <ul class="nav nav-tabs nav-justified">
+                    <li role="presentation" class="active"><a href="#">신규(1182)</a></li>
+                    <li role="presentation"><a href="#">서류통과(0)</a></li>
+                    <li role="presentation"><a href="#">최종합격(1)</a></li>
+                    <li role="presentation"><a href="#">불합격(623)</a></li>
+                    <li role="presentation"><a href="#">기간만료(0)</a></li>
+                  </ul>
             </div>
+
+            <!-- 검색 -->
             <div id="search">
-                검색창
-            </div>
-            <div id="list">
-                <div class="item">
-                    <div class="leftItem listItem"><input type="checkbox"></div>
-                    <div class="leftItem listItem"><span class="glyphicon glyphicon-star-empty"></span></div>
-                    <div class="leftItem listItem">프로필</div>
-                    <div class="itemContent listItem">
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="rightItem listItem">태그위치</div>
-                    <div style="clear: both;"></div>
+                <div class="input-group">
+                    <input class="form-control" placeholder="검색" />
+                    <span class="input-group-addon">찾기</span>
                 </div>
-
-                <input type="button" value="테스트" class="btn btn-primary">
-                <p id="p1">
-                    <span class="glyphicon glyphicon-search"></span>
-                    <span class="glyphicon glyphicon-thumbs-up"></span>
-                    <span class="glyphicon glyphicon-leaf"></span>
-                </p>
-
             </div>
+
+            <!-- 지원자 리스트 -->
+            <div id="list">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>
+                            <div class="item">
+                                <div class="leftItem listItem"><input type="checkbox"></div>
+                                <div class="leftItem listItem">
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </div>
+                                <div class="leftItem listItem">프로필</div>
+                                <div class="itemContent listItem">
+                                    <div class="contentNum">번호</div>
+                                    <div class="contentTitle">이름 지원포지션</div>
+                                </div>
+                                <!-- 태그 위치 -->
+                                <div class="rightItem listItem">
+                                    <span class="label label-info">new</span>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item">
+                                <div class="leftItem listItem"><input type="checkbox"></div>
+                                <div class="leftItem listItem"><span class="glyphicon glyphicon-star-empty"></span></div>
+                                <div class="leftItem listItem">프로필</div>
+                                <div class="itemContent listItem">
+                                    <div class="contentNum">번호</div>
+                                    <div class="contentTitle">이름 지원포지션</div>
+                                </div>
+                                <div class="rightItem listItem">
+                                    <span class="label label-warning">new</span>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item">
+                                <div class="leftItem listItem"><input type="checkbox"></div>
+                                <div class="leftItem listItem"><span class="glyphicon glyphicon-star-empty"></span></div>
+                                <div class="leftItem listItem">프로필</div>
+                                <div class="itemContent listItem">
+                                    <div class="contentNum">번호</div>
+                                    <div class="contentTitle">이름 지원포지션</div>
+                                </div>
+                                <div class="rightItem listItem">
+                                    <span class="label label-primary">new</span>
+
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item">
+                                <div class="leftItem listItem"><input type="checkbox"></div>
+                                <div class="leftItem listItem"><span class="glyphicon glyphicon-star-empty"></span></div>
+                                <div class="leftItem listItem">프로필</div>
+                                <div class="itemContent listItem">
+                                    <div class="contentNum">번호</div>
+                                    <div class="contentTitle">이름 지원포지션</div>
+                                </div>
+                                <div class="rightItem listItem">
+                                    <span class="label label-success">new</span>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="item">
+                                <div class="leftItem listItem"><input type="checkbox"></div>
+                                <div class="leftItem listItem"><span class="glyphicon glyphicon-star-empty"></span></div>
+                                <div class="leftItem listItem">프로필</div>
+                                <div class="itemContent listItem">
+                                    <div class="contentNum">번호</div>
+                                    <div class="contentTitle">이름 지원포지션</div>
+                                </div>
+                                <div class="rightItem listItem">
+                                    <span class="label label-default">new</span>
+                                    <span class="label label-default">new</span>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-md-offset-9">
+                <input style="margin-left: 58px;"type="button" id="interview" value="면접일정 제안하기" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close col-md-20 col-md-offset-12" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                    <h4 class="modal-title col-md-3 col-md-offset-3" id="myModalLabel">면접일정 제안하기</h4>
+                    </div>
+                    <div class="modal-body">
+                    <div class="modal-body-title"> 제안 메세지 </div>
+                    <input type="textarea" id="message" rows="100">
+                    <div class="modal-body-title"> 면접 일시</div>
+                    <input type="text" class="form-control">
+                    <div class="modal-body-title"> 담당자 연락처</div>
+                    <input type="text" class="form-control">
+                    <div class="modal-body-title"> 면접 장소 </div>
+                    <input type="text" class="form-control">
+                </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">면접일정 제안하기</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- 페이징 -->
             <div id="paging">
-
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                      <li>
+                        <a href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      <li><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li><a href="#">5</a></li>
+                      <li>
+                        <a href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
             </div>
+
+            
+
         </div>
 
 

@@ -1,3 +1,42 @@
+/* 지원자 사이드 메뉴 */
+
+#side-member {
+    float: left;
+    width: 299px;
+    height: 900px;
+    line-height: 50px;
+    background-color: #FFFFFF;
+    border-right: 1px solid #CCCCCC;
+}
+
+#side-member li {
+    list-style: none;
+    height: 25px;
+    margin-left: 20px;
+}
+
+#side-member .sideName {
+    border-bottom: solid 1px #CCCCCC;
+    padding-bottom: 5px;
+}
+
+.sideGroup {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+#side-member .side-list-item:hover {
+    cursor: pointer;
+    font-weight: 1.2em;
+}
+
+#side-member .side-list-item-selected {
+    color: #3d42d1;
+    font-weight: 30px;
+}
+
+
+
 /* 컨텐츠 부분 */
 
 #content {
@@ -99,3 +138,5 @@
 #paging a {
     color: #555555;;
 }
+
+

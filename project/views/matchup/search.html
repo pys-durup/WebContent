@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +10,11 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/project/css/bootstrap.css">
     <link rel="stylesheet" href="/project/css/main.css">
-    <link rel="stylesheet" href="/project/css/matchup_index.css">
-    <script src="js/jquery-2.2.4.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/project/css/search.css">
+    <script src="/project/js/jquery-2.2.4.js"></script>
+    <script src="/project/js/bootstrap.js"></script>
 </head>
+
 <body>
     <!-- header -->
     <div id="headerContainer">
@@ -25,14 +27,236 @@
                 <li><a href="/project/layout.html">지원자</a></li>
                 <li><a href="/project/views/matchup/matchup_index.html">매치업</a></li>
                 <li><a href="/project/views/matchup/search.html">매치업2</a></li>
-                <li><a href="/project/views/position/main.html">포지션</a></li>
-                <li><a href="/project/views/info/main.html">회사정보</a></li>
-                <li><a href="/project/views/account/main.html">계정관리</a></li>
+                <li><a href="/project/views/position/position.html">포지션</a></li>
+                <li><a href="/project/views/info/info.html">회사정보</a></li>
+                <li><a href="/project/views/account/account.html">계정관리</a></li>
             </ul>
             <div style="clear: both;"></div>
         </div>
     </div>
     <!-- header 끝 -->
-    
+
+    <div id="container">
+        <!-- search -->
+        <div id="section-search">
+            <div id="search">
+                <div class="row">
+                    <div class="title">찾고 있는 인재의 직무를 설정하고 검색할 수 있습니다</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <select class="form-control search-slt" id="exampleFormControlSelect1">
+                            <option>웹 개발자</option>
+                            <option>Example one</option>
+                            <option>Example one</option>
+                            <option>Example one</option>
+                            <option>Example one</option>
+                            <option>Example one</option>
+                            <option>Example one</option>
+                        </select>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control search-slt" placeholder="검색어를 입력하세요">
+                    </div>
+                    <div class="col-md-2 ">
+                        <button type="button" class="btn btn-primary btn-search ">검색</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-9 ">
+                        <input type="radio" name="gender" value="male" class="radio-item">
+                        <label for="male">이력서 있음</label>
+                        <input type="radio" name="gender" value="female" class="radio-item">
+                        <label for="female">최신순</label>
+                        <input type="radio" name="gender" value="other" class="radio-item">
+                        <label for="other">열람순</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- search 끝 -->
+
+
+
+        <!-- sidemenu -->
+        <div id="side-matchup">
+            <div class="sideGroup">
+                <div><input type="button" value="서비스 결제하기" class="btn btn-primary btn-middle"></div>
+                <ul>
+                    <li class="side-list-item side-list-item-selected" onclick="location.href='search.html';"> 목록전체
+                    </li>
+                    <li class="side-list-item">요청 후 받은 이력서</li>
+                    <li class="side-list-item">찜한 목록</li>
+                    <li class="side-list-item">미열람 목록</li>
+                    <li class="side-list-item">열람한 목록</li>
+                    <li class="side-list-item">면접 제안한 목록</li>
+                </ul>
+            </div>
+        </div>
+        <!-- sidemenu 끝 -->
+
+
+        <!-- search-reasult -->
+        <div id="search-reasult">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 left-item">
+                        <div class="pic"><img src="/project/views/image/man_01.png" alt=""></div>
+                        <!-- <div>번호</div> -->
+
+                    </div>
+                    <div class="col-md-10 right-item">
+                        <div>프론트엔드 개발자<span>서버 개발자/ 웹 개발자/ Node.js 개발자</span></div>
+                        <div>신입 | 코코아톡 <span>(2개월)</span></sapn></div>
+                        <div><span>이런 생각을 합니다
+                            자존감은 높이고, 자존심은 낮추려 합니다...</span>
+                        </div>
+                        <div>한국대학교  <span>컴퓨터 공학과</span></div>
+                        <div class="row">
+                            <button class="btn btn-default col-md-offset-8">찜하기</button>
+                            <input type="button" class="btn btn-primary col-md-offset-0" data-toggle="modal" data-target="#myModal" value="이력서 미리보기">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 left-item">
+                        <div class="pic"><img src="/project/views/image/man_02.png" alt=""></div>
+                        <!-- <div>번호</div> -->
+
+                    </div>
+                    <div class="col-md-10 right-item">
+                        <div>프론트엔드 개발자<span>서버 개발자/ 웹 개발자/ Node.js 개발자</span></div>
+                        <div>신입 | 코코아톡 <span>(2개월)</span></sapn></div>
+                        <div><span>이런 생각을 합니다
+                            자존감은 높이고, 자존심은 낮추려 합니다...</span>
+                        </div>
+                        <div>한국대학교  <span>컴퓨터 공학과</span></div>
+                        <div class="row">
+                            <button class="btn btn-default col-md-offset-8">찜하기</button>
+                            <button class="btn btn-primary col-md-offset-0">이력서 미리보기</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 left-item">
+                        <div class="pic"><img src="/project/views/image/man_02.png" alt=""></div>
+                        <!-- <div>번호</div> -->
+
+                    </div>
+                    <div class="col-md-10 right-item">
+                        <div>프론트엔드 개발자<span>서버 개발자/ 웹 개발자/ Node.js 개발자</span></div>
+                        <div>신입 | 코코아톡 <span>(2개월)</span></sapn></div>
+                        <div><span>이런 생각을 합니다
+                            자존감은 높이고, 자존심은 낮추려 합니다...</span>
+                        </div>
+                        <div>한국대학교  <span>컴퓨터 공학과</span></div>
+                        <div class="row">
+                            <button class="btn btn-default col-md-offset-8">찜하기</button>
+                            <button class="btn btn-primary col-md-offset-0">이력서 미리보기</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 left-item">
+                        <div class="pic"><img src="/project/views/image/man_02.png" alt=""></div>
+                        <!-- <div>번호</div> -->
+
+                    </div>
+                    <div class="col-md-10 right-item">
+                        <div>프론트엔드 개발자<span>서버 개발자/ 웹 개발자/ Node.js 개발자</span></div>
+                        <div>신입 | 코코아톡 <span>(2개월)</span></sapn></div>
+                        <div><span>이런 생각을 합니다
+                            자존감은 높이고, 자존심은 낮추려 합니다...</span>
+                        </div>
+                        <div>한국대학교  <span>컴퓨터 공학과</span></div>
+                        <div class="row">
+                            <button class="btn btn-default col-md-offset-8">찜하기</button>
+                            <button class="btn btn-primary col-md-offset-0">이력서 미리보기</button>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- 페이지네이션 -->
+            <div id="paging">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                      <li>
+                        <a href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      <li><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li><a href="#">5</a></li>
+                      <li>
+                        <a href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+            </div>
+
+        </div>
+        <div style="clear: both;"></div>
+
+    </div>
+
+     <!-- Modal -->
+     <div class="modal modal-center fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-center modal-60size " role="document">
+          <div class="modal-content modal-60size">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">이력서 미리보기</h4>
+            </div>
+            <div class="modal-body">
+                <div>박OO</div>
+                <div>이메일</div>
+                <div>연락처</div>
+                <div>착목한는 곳이 원대하고 그들은 피가 더운지라 실현에 대한 자신과 용기가 있다 그러므로 그들은 이상의 보배를 능히 품으며 그들의 이상은 아름답고 소담스러운 열매를 맺어 우리 인생을 풍부하게 하는 것이다 보라 청춘을 ! 그들의</div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-3 .">
+                        경력
+                    </div>
+                    <div class="col-md-9">
+                        2번구역
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+
+
+
 </body>
+
 </html>

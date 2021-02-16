@@ -25,9 +25,9 @@
                 <li><a href="/project/layout.html">지원자</a></li>
                 <li><a href="/project/views/matchup/matchup_index.html">매치업</a></li>
                 <li><a href="/project/views/matchup/search.html">매치업2</a></li>
-                <li><a href="/project/views/position/main.html">포지션</a></li>
-                <li><a href="/project/views/info/main.html">회사정보</a></li>
-                <li><a href="/project/views/account/main.html">계정관리</a></li>
+                <li><a href="/project/views/position/position.html">포지션</a></li>
+                <li><a href="/project/views/info/info.html">회사정보</a></li>
+                <li><a href="/project/views/account/account.html">계정관리</a></li>
             </ul>
             <div style="clear: both;"></div>
         </div>
@@ -176,34 +176,10 @@
             </div>
 
             <div class="col-md-offset-9">
-                <input style="margin-left: 58px;"type="button" id="interview" value="면접일정 제안하기" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                <input style="margin-left: 58px;" type="button" id="interview" value="면접일정 제안하기" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
             </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <button type="button" class="close col-md-20 col-md-offset-12" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-                    <h4 class="modal-title col-md-3 col-md-offset-3" id="myModalLabel">면접일정 제안하기</h4>
-                    </div>
-                    <div class="modal-body">
-                    <div class="modal-body-title"> 제안 메세지 </div>
-                    <input type="textarea" id="message" rows="100">
-                    <div class="modal-body-title"> 면접 일시</div>
-                    <input type="text" class="form-control">
-                    <div class="modal-body-title"> 담당자 연락처</div>
-                    <input type="text" class="form-control">
-                    <div class="modal-body-title"> 면접 장소 </div>
-                    <input type="text" class="form-control">
-                </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">면접일정 제안하기</button>
-                    </div>
-                </div>
-                </div>
-            </div>
+           
 
             <!-- paging -->
             <div id="paging">
@@ -229,6 +205,39 @@
             </div>
         </div>
         <!-- content 끝 -->
+
+
+        <!-- Modal -->
+        <div class="modal modal-center fade" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-center modal-70size " role="document">
+              <div class="modal-content modal-70size">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">면접일정 제안하기</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body-title"> 제안 메세지 </div>
+                    <div><textarea class="form-control" rows="8" ></textarea></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="modal-body-title"> 면접 일시</div>
+                        <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="modal-body-title"> 담당자 연락처</div>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-body-title"> 면접 장소 </div>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
 
 
         <!-- footer -->

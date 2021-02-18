@@ -5,8 +5,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Wemakeprice-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body, p, div, span, ul, li, dl, dt, dd, table, th, td, a, blockquote, input, textarea, fieldset, h1, h2, h3, h4, h5, h6, small, strong, b, i, em {
-    font-family: 'Jal_Onuel';
+    /* font-family: 'Jal_Onuel'; */
+    font-family: 'Wemakeprice-Regular' ;
+
     /* color: #555555; */
     /* line-height: 1.5em; */
     /* font-size: 15px; */
@@ -24,7 +33,7 @@ html {
 html, body {
 	padding: 0;
 	margin: 0;
-	background: #EEEEEE;   
+	background: #ffffff;   
 }
 
 body {
@@ -65,7 +74,7 @@ button,
 
 
 body {
-    background-color: #ebebeb;
+    background-color: #ffffff;
 }
 
 #headerContainer {
@@ -145,37 +154,60 @@ ul, li{
 /* 부트스트랩 재정의 */
 
 .container {
-    width: 1100px;
+    width: 100%;
+    min-width: 100%;
 }
 
 
 .btn-primary {
     color: white;
-    background-color: #898bcf;
-    border: #898bcf 1px solid; 
+    /* background-color: #898bcf; */
+    background-color: #2886FA;
+    /* background-color: #5782AA; */
+    border: #5782AA 1px solid; 
     outline: none;
 }
 
 .btn-primary:hover{
-    background-color: #a4a6d4;
+    /* background-color: #a4a6d4; */
+    background-color: #59a4ff;
     
 }
 
 .btn-default {
-    color: white;
-    border: #c3c5df 1px solid; 
-    background-color: #c3c5df;
+    color: #555555;
+    border: #F4F4F4 1px solid; 
+    background-color: #F4F4F4;
     outline: none;
 }
 
+
+
 .btn-default:hover{
-    background-color: #a8a8d6;
+    background-color: #a7a7a7;
     color: white;
     
 }
 
+.btn-info {
+    color: #2886FA;
+    border: #c3c5df 1px solid; 
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+.btn-info:hover, 
+.btn-info:focus, 
+.btn-info:active{
+    background-color: #b0d2fc;
+    color: #2886FA;
+    
+}
+
+
+
 .form-control:focus {
-    border: #b79ced solid 2px;
+    border: #76b0f8 solid 2px;
 }
 
 
@@ -205,7 +237,7 @@ ul, li{
 
 /* modal 사이즈 조절 */
 .modal-dialog.modal-70size {
-    width: 70%;
+    width: 700px;
     height: 70%;
     margin: 0;
     padding: 0;
@@ -217,7 +249,7 @@ ul, li{
 }
 
 .modal-dialog.modal-60size {
-    width: 60%;
+    width: 600px;
     height: 60%;
     margin: 0;
     padding: 0;

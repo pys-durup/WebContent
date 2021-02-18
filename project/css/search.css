@@ -173,3 +173,46 @@
 .modal-title {
     text-align: center;
 }
+
+.modal-body {
+    padding: 40px;
+}
+
+.first-body {
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-body .title {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.modal-body .subtitle{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.modal-body .text{
+    font-weight: normal;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.modal-body .masking {
+    background-color: #333333;
+}
+
+
+.modal-footer.viewinfo {
+    /* background-color: #b79ced; */
+    background-color: #2886FA;
+}
+
+.modal-footer .modal-footer-text {
+    float: left;
+    color: white;
+    text-align: left;
+    line-height: 40px;
+    font-size: 1.2em;
+}

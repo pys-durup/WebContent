@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script href="js/jquery-2.2.4.js"></script>
+    <script href="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=775d31cad8ed3352ed197ee1a04cc700&libraries=services"></script>
+    <link stylese>
+
+    <style>
+        #headerContainer {
+            width: 100%;
+            height: 60px;
+            border: 1px solid black;
+        }
+
+        #nav ul li {
+            float: left;
+            border: 1px solid black;
+        }
+
+        #container {
+            width: 100%;
+            height: 1200px;
+        }
+
+        #daySection {
+            /* width: 10%; */
+            min-width: 140px;
+            max-width: 140px;
+            height: 100%;
+            float: left;
+            border: 1px solid red;
+        }
+
+        #scheduleSection {
+            /* width: 15%; */
+            min-width: 240px;
+            max-width: 240px;
+            height: 100%;
+            float: left;
+            border: 1px solid blue;
+        }
+
+        #searchSection {
+            /* width: 20%; */
+            min-width: 340px;
+            max-width: 340px;
+            height: 100%;
+            float: left;
+            border: 1px solid yellowgreen;
+        }
+
+        #mapSection {
+            height: 100%;
+            overflow: hidden;
+            width: auto;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            float: left;
+            border: 1px solid cornflowerblue;
+        }
+
+        /* #map {
+            width: 100%;
+        } 
+
+        .container::after {
+            content: '';
+            clear: both;
+        }*/
+    </style>
+</head>
+
+<body>
+
+    <div id="headerContainer">
+        <nav id="nav">
+            헤더
+        </nav>
+    </div>
+
+    <div id="container">
+
+        <!-- 일정 -->
+        <div id="daySection">
+            일정Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem ab repellat quia dolor accusamus reiciendis dignissimos totam quisquam magni quae suscipit, id excepturi facere itaque corporis aut explicabo impedit? Aliquam!
+            Eius voluptatibus quaerat dolore nostrum sequi perferendis asperiores excepturi dolor id nisi magnam similique distinctio cupiditate, voluptatum dolorem repudiandae dolorum modi, molestias deserunt. Incidunt porro doloribus, beatae recusandae autem praesentium!
+            Ducimus, ad asperiores atque vel, quo quod voluptatibus, autem harum commodi cupiditate obcaecati? Nulla repellat sunt corrupti culpa? Facere maxime blanditiis optio vitae omnis nisi, veniam ex aliquid eligendi recusandae!
+            Vero non, nam voluptatum ea saepe id eveniet inventore quidem est nobis nostrum quod omnis molestias impedit magnam debitis dolorum culpa a ducimus laudantium illum quaerat qui accusantium dolore? Deleniti?
+            Reiciendis obcaecati cum nesciunt, esse enim illum dolor molestiae voluptates libero! Perferendis, eligendi. Ipsam perspiciatis aperiam nihil culpa, amet ipsa, pariatur corporis inventore expedita eveniet, sequi ad et accusantium dicta!
+
+        </div>
+
+        <!-- 경로 -->
+        <div id="scheduleSection">
+            경로Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem ab repellat quia dolor accusamus reiciendis dignissimos totam quisquam magni quae suscipit, id excepturi facere itaque corporis aut explicabo impedit? Aliquam!
+            Eius voluptatibus quaerat dolore nostrum sequi perferendis asperiores excepturi dolor id nisi magnam similique distinctio cupiditate, voluptatum dolorem repudiandae dolorum modi, molestias deserunt. Incidunt porro doloribus, beatae recusandae autem praesentium!
+            Ducimus, ad asperiores atque vel, quo quod voluptatibus, autem harum commodi cupiditate obcaecati? Nulla repellat sunt corrupti culpa? Facere maxime blanditiis optio vitae omnis nisi, veniam ex aliquid eligendi recusandae!
+            Vero non, nam voluptatum ea saepe id eveniet inventore quidem est nobis nostrum quod omnis molestias impedit magnam debitis dolorum culpa a ducimus laudantium illum quaerat qui accusantium dolore? Deleniti?
+            Reiciendis obcaecati cum nesciunt, esse enim illum dolor molestiae voluptates libero! Perferendis, eligendi. Ipsam perspiciatis aperiam nihil culpa, amet ipsa, pariatur corporis inventore expedita eveniet, sequi ad et accusantium dicta!
+
+        </div>
+
+        <!-- 검색 -->
+        <div id="searchSection">
+            검색Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem ab repellat quia dolor accusamus reiciendis dignissimos totam quisquam magni quae suscipit, id excepturi facere itaque corporis aut explicabo impedit? Aliquam!
+            Eius voluptatibus quaerat dolore nostrum sequi perferendis asperiores excepturi dolor id nisi magnam similique distinctio cupiditate, voluptatum dolorem repudiandae dolorum modi, molestias deserunt. Incidunt porro doloribus, beatae recusandae autem praesentium!
+            Ducimus, ad asperiores atque vel, quo quod voluptatibus, autem harum commodi cupiditate obcaecati? Nulla repellat sunt corrupti culpa? Facere maxime blanditiis optio vitae omnis nisi, veniam ex aliquid eligendi recusandae!
+            Vero non, nam voluptatum ea saepe id eveniet inventore quidem est nobis nostrum quod omnis molestias impedit magnam debitis dolorum culpa a ducimus laudantium illum quaerat qui accusantium dolore? Deleniti?
+            Reiciendis obcaecati cum nesciunt, esse enim illum dolor molestiae voluptates libero! Perferendis, eligendi. Ipsam perspiciatis aperiam nihil culpa, amet ipsa, pariatur corporis inventore expedita eveniet, sequi ad et accusantium dicta!
+        </div>
+
+        <!-- 지도 -->
+        <div id="mapSection">
+            <div id="map">
+
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+
+    </div>
+
+    <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        // 마커가 표시될 위치입니다 
+        var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+
+        // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+        // marker.setMap(null);
+
+        function setMarker(mapx, mapy) {
+            marker.setMap(null);
+            alert(mapx + mapy);
+
+            //마커가 표시될 위치입니다 (좌표 객체)
+            let selectPosition = new kakao.maps.LatLng(mapx, mapy)
+
+
+            // 마커를 생성합니다
+            marker = new kakao.maps.Marker({
+                position: selectPosition
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+
+            // 생성한 마커를 지도의 중심으로 이동
+            map.setCenter(selectPosition);
+        }
+
+        // $(document).ready(function () {
+        //     console.log($(window).width());
+        //     console.log($(window).height());
+        //     $('.test').css('width', $(window).width() - 50);
+        //     $('.test').css('height', $(window).height() - 50);
+        //     $(window).resize(function () {
+        //         $('.test').css('width', $(window).width() - 50);
+        //         $('.test').css('height', $(window).height() - 50);
+        //     });
+        // });
+
+        $( document ).ready(function() {
+            console.log( "ready!" );
+        });
+
+        
+
+    </script>
+
+</body>
+
+</html>

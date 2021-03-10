@@ -1,0 +1,432 @@
+
+/*공통 적용 *********************************************************************/
+@font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    body, p, div, span, ul, li, dl, dt, dd, table, th, td, a, blockquote, input, textarea, fieldset, h1, h2, h3, h4, h5, h6, small, strong, b, i, em {
+        font-family: 'InfinitySans-RegularA1';
+
+    }
+
+    html {
+        position: relative;
+        left: 0;
+        top: 0;
+        min-height: 100%;
+        background-color: #EEEEEE;
+        
+    }
+    
+    html, body {
+        padding: 0;
+        margin: 0;
+        background: #ffffff;   
+    }
+    
+    body {
+        overflow-y: scroll;
+        height: 101%;
+    }
+    
+    div {
+        padding: 0;
+    }
+    
+    input,
+    input:focus {
+        outline: none !important;
+        box-shadow: none !important
+    }
+    
+    input[type="text"],
+    textarea {
+        box-shadow: none !important;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        resize: none
+    }
+    
+    
+    button,
+    .btn-group,
+    .open,
+    .dropdown-toggle,
+    .btn {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+
+/* 헤더 *********************************************************************/
+#headerContainer {
+    width: 100%;
+    height: 60px;
+    border: 1px solid black;
+}
+
+#nav ul li {
+    float: left;
+    border: 1px solid black;
+}
+
+/* 컨텐츠 부분 컨테이너 *********************************************************************/
+#container {
+    width: 100%;
+    min-width: 720px;
+    height: 1060px;
+}
+
+#container::after{
+    content: ""; 
+    clear: both; 
+    display: block; 
+}
+
+/* DAY 표시 부분 *********************************************************************/
+#daySection {
+    width: 10%;
+    min-width: 120px;
+    max-width: 120px;
+    height: 100%;
+    float: left;
+    border: 1px solid red;
+}
+
+#dayContent {
+    height: 100%;
+    background-color: rgb(8, 39, 8);
+}
+
+#dayHeader {
+    height: 40px;
+    background-color: rgb(3, 14, 8);
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 0.8em;
+    line-height: 40px;
+    text-align: center;
+    
+}
+
+
+#daySection .dayItem, #daySection .dayAll {
+    border-bottom: 1px solid white;
+    background-color: rgb(8, 39, 8);
+    height: 70px;
+}
+
+#daySection .dayAll {
+    color: white;
+    text-align: center;
+    font-size: 1.0em;
+    line-height: 60px;
+}
+
+#daySection .dayAll:hover, #daySection .dayItem:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+#daySection .dayItem {
+    padding: 10px;
+}
+
+#daySection .dayItem .dayItemLeft {
+    float: left;
+    width: 40px;
+    margin-left: 7px;
+    /* margin-top: 5px; */
+    color: white;
+}
+
+#daySection .dayItem .dayItemRight {
+    float: left;
+    width: 40px;
+    /* margin-top: 5px; */
+    color: white;
+}
+
+#daySection .dayItem .dayDay {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+#daySection .dayItem .dayDate {
+    font-size: 0.7em;
+    margin-left: 5px;
+    color: yellow;
+}
+#daySection .dayItem .dayOfWeek {
+    font-size: 0.9em;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+
+#daySection .dayItem::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+
+/* 경로 부분 *********************************************************************/
+#scheduleSection {
+    width: 15%;
+    min-width: 230px;
+    max-width: 230px;
+    height: 100%;
+    float: left;
+    border: 1px solid blue;
+}
+
+/* 경로 부분 헤더 ----------------------*/
+#scheduleHeader {
+    height: 40px;
+    background-color: rgb(3, 14, 8);
+    color: white;
+    font-size: 1.2em;
+    line-height: 35px;
+    text-align: center;
+}
+
+/* placeholder */
+.schedule-placeholder {
+    height: 90px;
+    background-color: rgb(211, 233, 164);
+}
+
+#scheduleDetail {
+    width: 100%;
+    height: 800px;
+    overflow-y: scroll;
+    overflow-x: none;
+}
+
+#scheduleDetail .resultItem {
+    width: 205px;
+    height: 90px;
+    background-color: white;
+    /* border: 1px solid rgb(167, 36, 36); */
+    border-bottom: 1px solid #cccccc;
+}
+
+#scheduleDetail .resultItem:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+#scheduleDetail .resultItem::after {
+    content: '';
+    clear: both;
+    display: block; 
+}
+
+#scheduleDetail .resultItem div {
+    float: left;
+    margin-left: 10px;
+    
+}
+
+#scheduleDetail .resultItem .img_box {
+    width: 70px;
+    margin-top: 15px;
+    
+}
+#scheduleDetail .resultItem .img_box img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid rebeccapurple;
+}
+
+#scheduleDetail .resultItem .content_box {
+    width: 110px;
+    margin-top: 20px;
+}
+
+#scheduleDetail .resultItem .content_box p{
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+#scheduleDetail .resultItem .btn_box {
+    width: 50px;
+    margin-top: 15px;
+   
+}
+
+#scheduleDetail .resultItem .btn_box input {
+    margin-top : 8px;
+    font-size: 0.9em;
+}
+
+
+
+
+/* 검색 부분 *********************************************************************/
+#searchSection {
+    /* width: 20%; */
+    min-width: 340px;
+    max-width: 340px;
+    height: 100%;
+    float: left;
+    
+    border: 1px solid yellowgreen;
+}
+/* 검색 부분 헤더 ----------------------*/
+#searchHeader {
+    height: 40px;
+    background-color: rgb(3, 14, 8);
+    color: white;
+    font-size: 1.3em;
+}
+#searchHeader .searchHeaderLeft {
+    margin-left: 10px;
+    line-height: 40px;
+}
+
+#searchBodyOne {
+    padding: 10px 5px;
+    border-bottom: solid 1px #aaa;
+    margin-bottom: 10px;
+}
+
+/* 검색 조건 설정 ----------------------*/
+#searchArea {
+    margin-bottom: 10px;
+}
+
+#searchArea::after {
+    content: ""; 
+    clear: both; 
+    display: block; 
+}
+
+
+#searchArea .searchAreaOne {
+    width: 150px;
+    float: left;
+}
+
+
+#searchArea .searchAreaTwo {
+    width: 150px;
+    float: left;
+    margin-left: 18px;
+}
+
+
+/* 검색창 ----------------------*/
+#searchKeyword #keyword {
+    width: 250px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    float: left;
+}
+
+#searchBtn {
+    /* display: inline-block; */
+    float: left;
+    width: 40px;
+    height: 34px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+#searchKeyword::after {
+    content: ""; 
+    clear: both; 
+    display: block; 
+    
+}
+
+
+/* 테마 선택 ----------------------*/
+#searchTheme {
+    
+}
+
+
+
+/* 검색 결과 ----------------------*/
+#searchResult {
+    border: 1px solid purple;
+    height: 980px;
+    overflow-y: scroll;
+    z-index: 3;
+}
+
+#searchResult .resultItem {
+    height: 120px;
+    border: 1px solid purple;
+}
+
+#searchResult .resultItem:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+#searchResult .resultItem::after {
+    content: '';
+    clear: both;
+    display: block; 
+}
+
+#searchResult .resultItem div {
+    float: left;
+    margin-left: 10px;
+    
+}
+
+#searchResult .resultItem .img_box {
+    width: 70px;
+    margin-top: 25px;
+    
+}
+#searchResult .resultItem .img_box img {
+    width: 65px;
+    height: 65px;
+    border: 1px solid rebeccapurple;
+}
+
+#searchResult .resultItem .content_box {
+    width: 130px;
+    margin-top: 30px;
+}
+
+#searchResult .resultItem .content_box p{
+    margin-top: 5px;
+}
+
+#searchResult .resultItem .btn_box {
+    width: 50px;
+    margin-top: 15px;
+   
+}
+
+#searchResult .resultItem .btn_box input {
+    margin-top : 8px;
+    font-size: 0.9em;
+}
+
+/* 지도 부분 *********************************************************************/
+#mapSection {
+    height: 100%;
+    overflow: hidden;
+    /* width: auto; */
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    /* float: left; */
+    border: 1px solid cornflowerblue;
+}

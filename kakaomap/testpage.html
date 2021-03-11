@@ -15,7 +15,7 @@
 
     <script type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=775d31cad8ed3352ed197ee1a04cc700&libraries=services"></script>
-    
+
 </head>
 
 <body>
@@ -29,18 +29,18 @@
 
         <!-- 일정 -->
         <div id="daySection">
+            <div id="dayHeader">
+                <span>03.10</span>
+                <span> ~ </span>
+                <span>03.11(수요일)</span>
+            </div>
             <div id="dayContent">
-                <div id="dayHeader">
-                    <span>03.10</span>
-                    <span> ~ </span>
-                    <span>03.11(수요일)</span>
-                </div>
-                <div class="dayAll">
+                <div class="dayAll selectAble">
                     <span>전체 일정 보기</span>
                 </div>
-                <div>
-                    <div class="dayItem"> <!-- dayItem -->
-                        <div class="dayItemLeft"> 
+                <div id="dayList">
+                    <div class="dayItem selectAble selected"> <!-- dayItem -->
+                        <div class="dayItemLeft">
                             <div class="dayDay">DAY1</div>
                             <div class="dayDate">03.10</div>
                         </div>
@@ -48,7 +48,7 @@
                             <div class="dayOfWeek">수요일</div>
                         </div>
                     </div>
-                    <div class="dayItem"> <!-- dayItem -->
+                    <div class="dayItem selectAble"> <!-- dayItem -->
                         <div class="dayItemLeft"> 
                             <div class="dayDay">DAY2</div>
                             <div class="dayDate">03.11</div>
@@ -58,8 +58,13 @@
                         </div>
                     </div>
                 </div>
-                
+                <div class="dayAdd">
+                    <div>DAY 추가</div>
+                </div>
             </div>
+
+
+
         </div>
 
         <!-- 경로 -->
@@ -70,7 +75,24 @@
                 <span>03.10(수요일)</span>
             </div>
             <div id="scheduleBody">
-                <div id="scheduleDetail" >
+                <div id="scheduleDetail">
+                    <!-- <div class="resultItem">
+                        <div class="img_box">
+                            <img src="imgaes/noImage.gif" alt="">
+                            <div class="item_number"></div>
+                        </div>
+                        <div class="content_box">
+                            <p>장소이름1</p>
+                            <p>장소종류1</p>
+                        </div>
+                        <div class="btn_del">
+                            <span class="glyphicon glyphicon-trash deleteScheduleItem"></span>
+                        </div>
+                        <div class="btn_box" style="display: none;">
+                            <input type="button" class="btn btn-default" data-toggle="modal" data-target="#detailCommonInfo"value="정보보기">
+                            <input type="button" class="btn btn-default addScheduleItem" value="일정추가">
+                        </div>
+                    </div>    -->
                 </div>
             </div>
         </div>
@@ -101,49 +123,87 @@
                     <button id="searchBtn"><span class="glyphicon glyphicon-search"></span></button>
                 </div>
                 <div id="searchTheme">
-                    테마부분
+                    <div class="titleTheme">테마 선택</div>
+                    <div class="img_area">
+                        <div class="image_box">
+                            <img src="imgaes/camera.png" alt="">
+                        </div>
+                        <div class="image_box">
+                            <img src="imgaes/leaf.png" alt="">
+                        </div>
+                        <div class="image_box">
+                            <img src="imgaes/fork.png" alt="">
+                        </div>
+                        <div class="image_box">
+                            <img src="imgaes/shopping-bag.png" alt="">
+                        </div>
+                        <div class="image_box">
+                            <img src="imgaes/running-shoes.png" alt="">
+                        </div>
+                        <div class="image_box">
+                            <img src="imgaes/hotel.png" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="searchResult" class="searchRow">
-                <div class="resultItem" > <!-- resultItem -->
+                <div class="resultItem">
+                    <!-- resultItem -->
                     <div class="img_box">
                         <img src="imgaes/noImage.gif" alt="">
+                        <div class="item_number" style="display: none;"></div>
                     </div>
                     <div class="content_box">
-                        <p>장소이름1</p>
-                        <p>장소종류1</p>
+                        <p class="content_name">장소이름</p>
+                        <p class="content_type">자연</p>
+                    </div>
+                    <div class="btn_del" style="display: none;">
+                        <span class="glyphicon glyphicon-trash deleteScheduleItem"></span>
                     </div>
                     <div class="btn_box">
-                        <input type="button" class="btn btndefault" value="정보보기">
-                        <input type="button" class="btn btndefault" value="일정추가">
+                        <input type="button" class="btn btn-default" data-toggle="modal" data-target="#detailCommonInfo"
+                            value="정보보기">
+                        <input type="button" class="btn btn-default addScheduleItem" value="일정추가">
                     </div>
                 </div>
-                <div class="resultItem" > <!-- resultItem -->
+                <div class="resultItem">
+                    <!-- resultItem -->
                     <div class="img_box">
                         <img src="imgaes/noImage.gif" alt="">
+                        <div class="item_number" style="display: none;"></div>
                     </div>
                     <div class="content_box">
-                        <p>장소이름2</p>
-                        <p>장소종류2</p>
+                        <p class="content_name">장소이름2</p>
+                        <p class="content_type">장소종류2</p>
+                    </div>
+                    <div class="btn_del" style="display: none;">
+                        <span class="glyphicon glyphicon-trash deleteScheduleItem"></span>
                     </div>
                     <div class="btn_box">
-                        <input type="button" class="btn btndefault" value="정보보기">
-                        <input type="button" class="btn btndefault" value="일정추가">
+                        <input type="button" class="btn btn-default" data-toggle="modal" data-target="#detailCommonInfo"
+                            value="정보보기">
+                        <input type="button" class="btn btn-default addScheduleItem" value="일정추가">
                     </div>
-                </div> 
-                <div class="resultItem" > <!-- resultItem -->
+                </div>
+                <div class="resultItem">
+                    <!-- resultItem -->
                     <div class="img_box">
                         <img src="imgaes/noImage.gif" alt="">
+                        <div class="item_number" style="display: none;"></div>
                     </div>
                     <div class="content_box">
-                        <p>장소이름3</p>
-                        <p>장소종류3</p>
+                        <p class="content_name">장소이름2</p>
+                        <p class="content_type">장소종류2</p>
+                    </div>
+                    <div class="btn_del" style="display: none;">
+                        <span class="glyphicon glyphicon-trash deleteScheduleItem"></span>
                     </div>
                     <div class="btn_box">
-                        <input type="button" class="btn btndefault" value="정보보기">
-                        <input type="button" class="btn btndefault" value="일정추가">
+                        <input type="button" class="btn btn-default" data-toggle="modal" data-target="#detailCommonInfo"
+                            value="정보보기">
+                        <input type="button" class="btn btn-default addScheduleItem" value="일정추가">
                     </div>
-                </div>  
+                </div>
             </div>
             <div>
                 페이징 부분
@@ -157,7 +217,27 @@
 
             </div>
         </div>
+    </div>
 
+
+
+    <!-- 장소 정보보기 Modal -->
+    <div class="modal fade" id="detailCommonInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="commonInfoTitle">Modal title</h4>
+                </div>
+                <div class="modal-body" id="commonInfoBody"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="js/testpage.js"></script>
 

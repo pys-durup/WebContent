@@ -98,17 +98,17 @@
     max-width: 120px;
     height: 100%;
     float: left;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 #dayContent {
-    height: 100%;
-    background-color: rgb(8, 39, 8);
+    height: 1020px;
+    background-color: #8f9993;
 }
 
 #dayHeader {
     height: 40px;
-    background-color: rgb(3, 14, 8);
+    background-color: #586342;
     border-bottom: 1px solid white;
     color: white;
     font-size: 0.8em;
@@ -118,9 +118,9 @@
 }
 
 
-#daySection .dayItem, #daySection .dayAll {
+#daySection .dayItem, #daySection .dayAll, #daySection .dayAdd {
     border-bottom: 1px solid white;
-    background-color: rgb(8, 39, 8);
+    background-color: #8f9993;
     height: 70px;
 }
 
@@ -131,10 +131,25 @@
     line-height: 60px;
 }
 
-#daySection .dayAll:hover, #daySection .dayItem:hover {
+#daySection .dayAdd {
+    height: 50px;
+    padding: 13px;
+    color: white;
+    text-align: center;
+    font-size: 1.0em;
+    border: 1px solid white;
+}
+
+#daySection .dayAll:hover, #daySection .dayItem:hover, #daySection .dayAdd:hover {
     opacity: 0.7;
+    background-color: #92a172;
     cursor: pointer;
 }
+
+#daySection .selected {
+    background-color: #92a172;
+}
+
 
 #daySection .dayItem {
     padding: 10px;
@@ -185,34 +200,36 @@
     max-width: 230px;
     height: 100%;
     float: left;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 /* 경로 부분 헤더 ----------------------*/
 #scheduleHeader {
     height: 40px;
-    background-color: rgb(3, 14, 8);
+    background-color: #586342;
     color: white;
     font-size: 1.2em;
-    line-height: 35px;
+    line-height: 38px;
     text-align: center;
+    border-left: 1px solid white;
 }
 
 /* placeholder */
 .schedule-placeholder {
     height: 90px;
-    background-color: rgb(211, 233, 164);
+    background-color: #d5eea3;
 }
 
 #scheduleDetail {
     width: 100%;
-    height: 800px;
+    height: 1020px;
     overflow-y: scroll;
     overflow-x: none;
 }
 
 #scheduleDetail .resultItem {
-    width: 205px;
+    position: relative;
+    width: 210px;
     height: 90px;
     background-color: white;
     /* border: 1px solid rgb(167, 36, 36); */
@@ -232,13 +249,15 @@
 
 #scheduleDetail .resultItem div {
     float: left;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     
 }
 
 #scheduleDetail .resultItem .img_box {
+    position: relative;
     width: 70px;
     margin-top: 15px;
+    margin-left: 15px;
     
 }
 #scheduleDetail .resultItem .img_box img {
@@ -247,15 +266,50 @@
     border: 1px solid rebeccapurple;
 }
 
+#scheduleDetail .resultItem .item_number {
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    position: absolute;
+    left: -7px;
+    top: -7px;
+    background: #184205;
+    line-height: 19px;
+    text-align: center;
+    color: white;
+    font-size: 10px;
+}
+
+
 #scheduleDetail .resultItem .content_box {
     width: 110px;
     margin-top: 20px;
 }
 
-#scheduleDetail .resultItem .content_box p{
-    font-size: 0.8em;
-    margin-top: 5px;
+#scheduleDetail .resultItem .content_box .content_name{
+    margin-top: 8px;
+    font-size: 14px;
 }
+
+#scheduleDetail .resultItem .content_box .content_type{
+    margin-top: 5px;
+    font-size: 11px;
+    color: #999;
+}
+
+#scheduleDetail .resultItem .btn_del {
+    position: absolute;
+    left: 175px;
+    top: 60px;
+    font-size: 1.2em;
+    z-index: 1;
+}
+
+#scheduleDetail .resultItem .btn_del:hover {
+    color: rgb(21, 187, 30);
+    cursor: pointer;
+}
+
 
 #scheduleDetail .resultItem .btn_box {
     width: 50px;
@@ -278,15 +332,17 @@
     max-width: 340px;
     height: 100%;
     float: left;
-    
-    border: 1px solid yellowgreen;
+
+    /* border: 1px solid yellowgreen; */
 }
 /* 검색 부분 헤더 ----------------------*/
 #searchHeader {
     height: 40px;
-    background-color: rgb(3, 14, 8);
+    background-color: #586342;
     color: white;
     font-size: 1.3em;
+    border-left: 1px solid white;
+    padding-left: 10px;
 }
 #searchHeader .searchHeaderLeft {
     margin-left: 10px;
@@ -297,6 +353,7 @@
     padding: 10px 5px;
     border-bottom: solid 1px #aaa;
     margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 /* 검색 조건 설정 ----------------------*/
@@ -328,7 +385,7 @@
 #searchKeyword #keyword {
     width: 250px;
     margin-bottom: 10px;
-    margin-left: 10px;
+    margin-left: 17px;
     float: left;
 }
 
@@ -351,6 +408,33 @@
 
 /* 테마 선택 ----------------------*/
 #searchTheme {
+    height: 70px;
+    /* border: 1px solid purple; */
+}
+
+#searchTheme .titleTheme {
+    padding-top: 5px;
+    /* border-top: 1px solid #cccccc */
+}
+
+#searchTheme .img_area {
+    margin-top: 5px;
+}
+#searchTheme .image_box {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+#searchTheme .image_box:hover {
+    opacity: 0.6;
+    color: aqua;
+}
+
+#searchTheme img {
+    width: 40px;
+    height: 40px;
     
 }
 
@@ -358,15 +442,15 @@
 
 /* 검색 결과 ----------------------*/
 #searchResult {
-    border: 1px solid purple;
-    height: 980px;
+    height: 810px;
     overflow-y: scroll;
     z-index: 3;
+    /* border: 1px solid purple; */
 }
 
 #searchResult .resultItem {
     height: 120px;
-    border: 1px solid purple;
+    border: 1px solid #cccccc;
 }
 
 #searchResult .resultItem:hover {
@@ -402,8 +486,15 @@
     margin-top: 30px;
 }
 
-#searchResult .resultItem .content_box p{
+#searchResult .resultItem .content_box .content_name{
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+#searchResult .resultItem .content_box .content_type{
     margin-top: 5px;
+    font-size: 11px;
+    color: #999;
 }
 
 #searchResult .resultItem .btn_box {
